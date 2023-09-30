@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <xi:include href="NKJP_1M_header.xml"/>
+ <TEI>
+  <xi:include href="header.xml"/>
+  <text xml:lang="pl">
+   <body>
+    <!-- senses_1-p is akapit 11602 with instances (akapit_transzy-s) 23200, 23220 in batches (transza-s) 2321, 2323 resp. -->
+    <p corresp="ann_segmentation.xml#segm_1-p" xml:id="senses_1-p">
+     <s xml:id="senses_1.11-s" corresp="ann_segmentation.xml#segm_1.11-s"/>
+     <s xml:id="senses_1.22-s" corresp="ann_segmentation.xml#segm_1.22-s"/>
+     <s corresp="ann_segmentation.xml#segm_1.32-s" xml:id="senses_1.32-s">
+      <seg corresp="ann_segmentation.xml#segm_1.24-seg" xml:id="senses_1.24-seg">
+       <!-- bierze [150,6] -->
+       <fs type="sense">
+        <f fVal="NKJP_WSI.xml#brac.3" name="sense"/>
+       </fs>
+      </seg>
+     </s>
+     <s xml:id="senses_1.42-s" corresp="ann_segmentation.xml#segm_1.42-s"/>
+     <s corresp="ann_segmentation.xml#segm_1.50-s" xml:id="senses_1.50-s">
+      <seg corresp="ann_segmentation.xml#segm_1.43-seg" xml:id="senses_1.43-seg">
+       <!-- Pozostali [257,9] -->
+       <fs type="sense">
+        <f fVal="NKJP_WSI.xml#pozostac.2" name="sense"/>
+       </fs>
+      </seg>
+     </s>
+     <s xml:id="senses_1.55-s" corresp="ann_segmentation.xml#segm_1.55-s"/>
+    </p>
+   </body>
+  </text>
+ </TEI>
+</teiCorpus>

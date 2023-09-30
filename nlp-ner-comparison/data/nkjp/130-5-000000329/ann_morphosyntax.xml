@@ -1,0 +1,2442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- w indeksach elementów wciąganych mogą zdarzyć się nieciągłości (z alternatyw segmentacyjnych)  -->
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xmlns:nkjp="http://www.nkjp.pl/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <xi:include href="NKJP_1M_header.xml"/>
+ <TEI>
+  <xi:include href="header.xml"/>
+  <text>
+   <body>
+    <!-- morph_1-p is akapit 11526 with instances (akapit_transzy-s) 23044, 23069 in batches (transza-s) 2305, 2308 resp. -->
+    <p corresp="ann_segmentation.xml#segm_1-p" xml:id="morph_1-p">
+     <s corresp="ann_segmentation.xml#segm_1.19-s" xml:id="morph_1.19-s">
+      <seg corresp="ann_segmentation.xml#segm_1.1-seg" xml:id="morph_1.1-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Stefan</string>
+        </f>
+        <!-- Stefan [0,6] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.1.1-lex">
+          <f name="base">
+           <string>Stefan</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:nom:m1" xml:id="morph_1.1.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.1.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Stefan:subst:sg:nom:m1</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.2-seg" xml:id="morph_1.2-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>i</string>
+        </f>
+        <!-- i [7,1] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.2.1-lex">
+          <f name="base">
+           <string>i</string>
+          </f>
+          <f name="ctag">
+           <symbol value="conj"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.2.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.2.2-lex">
+          <f name="base">
+           <string>i</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interj"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.2.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.2.3-lex">
+          <f name="base">
+           <string>i</string>
+          </f>
+          <f name="ctag">
+           <symbol value="qub"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.2.3.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.2.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>i:conj</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.3-seg" xml:id="morph_1.3-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Claudia</string>
+        </f>
+        <!-- Claudia [9,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.3.1-lex">
+          <f name="base">
+           <string/>
+          </f>
+          <f name="ctag">
+           <symbol value="ign"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.3.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.3.2-lex">
+          <f name="base">
+           <string>Claudia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:nom:f" xml:id="morph_1.3.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.3.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Claudia:subst:sg:nom:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.4-seg" xml:id="morph_1.4-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>zostali</string>
+        </f>
+        <!-- zostali [17,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.4.1-lex">
+          <f name="base">
+           <string>zostać</string>
+          </f>
+          <f name="ctag">
+           <symbol value="praet"/>
+          </f>
+          <f name="msd">
+           <symbol value="pl:m1:perf" xml:id="morph_1.4.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.4.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>zostać:praet:pl:m1:perf</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.5-seg" xml:id="morph_1.5-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>sfotografowani</string>
+        </f>
+        <!-- sfotografowani [25,14] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.5.1-lex">
+          <f name="base">
+           <string>sfotografować</string>
+          </f>
+          <f name="ctag">
+           <symbol value="ppas"/>
+          </f>
+          <f name="msd">
+           <symbol value="pl:nom:m1:perf:aff" xml:id="morph_1.5.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.5.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>sfotografować:ppas:pl:nom:m1:perf:aff</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.6-seg" xml:id="morph_1.6-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>na</string>
+        </f>
+        <!-- na [40,2] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.6.1-lex">
+          <f name="base">
+           <string>na</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interj"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.6.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.6.2-lex">
+          <f name="base">
+           <string>na</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="acc" xml:id="morph_1.6.2.1-msd"/>
+            <symbol value="loc" xml:id="morph_1.6.2.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.6.2.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>na:prep:loc</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.7-seg" xml:id="morph_1.7-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>lotnisku</string>
+        </f>
+        <!-- lotnisku [43,8] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.7.1-lex">
+          <f name="base">
+           <string>lotnisko</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:dat:n" xml:id="morph_1.7.1.1-msd"/>
+            <symbol value="sg:loc:n" xml:id="morph_1.7.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.7.1.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>lotnisko:subst:sg:loc:n</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.8-seg" xml:id="morph_1.8-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>w</string>
+        </f>
+        <!-- w [52,1] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.8.1-lex">
+          <f name="base">
+           <string>w</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="acc:nwok" xml:id="morph_1.8.1.1-msd"/>
+            <symbol value="loc:nwok" xml:id="morph_1.8.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.8.2-lex">
+          <f name="base">
+           <string>wiek</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.8.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.8.3-lex">
+          <f name="base">
+           <string>wielki</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.8.3.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.8.4-lex">
+          <f name="base">
+           <string>wiersz</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.8.4.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.8.5-lex">
+          <f name="base">
+           <string>wieś</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.8.5.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.8.6-lex">
+          <f name="base">
+           <string>wyspa</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.8.6.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.8.1.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>w:prep:loc:nwok</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.9-seg" xml:id="morph_1.9-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Hamburgu</string>
+        </f>
+        <!-- Hamburgu [54,8] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.9.1-lex">
+          <f name="base">
+           <string>Hamburg</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:loc:m3" xml:id="morph_1.9.1.1-msd"/>
+            <symbol value="sg:voc:m3" xml:id="morph_1.9.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.9.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Hamburg:subst:sg:loc:m3</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.10-seg" xml:id="morph_1.10-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>,</string>
+        </f>
+        <!-- , [62,1] -->
+        <f name="nps">
+         <binary value="true"/>
+        </f>
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.10.1-lex">
+          <f name="base">
+           <string>,</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.10.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.10.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>,:interp</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.11-seg" xml:id="morph_1.11-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>skąd</string>
+        </f>
+        <!-- skąd [64,4] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.11.1-lex">
+          <f name="base">
+           <string>skąd</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adv"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.11.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.11.2-lex">
+          <f name="base">
+           <string>skąd</string>
+          </f>
+          <f name="ctag">
+           <symbol value="qub"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.11.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.11.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>skąd:adv</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.12-seg" xml:id="morph_1.12-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>udali</string>
+        </f>
+        <!-- udali [69,5] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.12.1-lex">
+          <f name="base">
+           <string>udać</string>
+          </f>
+          <f name="ctag">
+           <symbol value="praet"/>
+          </f>
+          <f name="msd">
+           <symbol value="pl:m1:perf" xml:id="morph_1.12.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.12.2-lex">
+          <f name="base">
+           <string>udały</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adj"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="pl:nom:m1:pos" xml:id="morph_1.12.2.1-msd"/>
+            <symbol value="pl:voc:m1:pos" xml:id="morph_1.12.2.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.12.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>udać:praet:pl:m1:perf</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.13-seg" xml:id="morph_1.13-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>się</string>
+        </f>
+        <!-- się [75,3] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.13.1-lex">
+          <f name="base">
+           <string>się</string>
+          </f>
+          <f name="ctag">
+           <symbol value="qub"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.13.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.13.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>się:qub</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.14-seg" xml:id="morph_1.14-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>na</string>
+        </f>
+        <!-- na [79,2] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.14.1-lex">
+          <f name="base">
+           <string>na</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interj"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.14.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.14.2-lex">
+          <f name="base">
+           <string>na</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="acc" xml:id="morph_1.14.2.1-msd"/>
+            <symbol value="loc" xml:id="morph_1.14.2.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.14.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>na:prep:acc</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.15-seg" xml:id="morph_1.15-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>wspólny</string>
+        </f>
+        <!-- wspólny [82,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.15.1-lex">
+          <f name="base">
+           <string>wspólny</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adj"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:m1:pos" xml:id="morph_1.15.1.1-msd"/>
+            <symbol value="sg:nom:m2:pos" xml:id="morph_1.15.1.2-msd"/>
+            <symbol value="sg:nom:m3:pos" xml:id="morph_1.15.1.3-msd"/>
+            <symbol value="sg:voc:m1:pos" xml:id="morph_1.15.1.4-msd"/>
+            <symbol value="sg:voc:m2:pos" xml:id="morph_1.15.1.5-msd"/>
+            <symbol value="sg:voc:m3:pos" xml:id="morph_1.15.1.6-msd"/>
+            <symbol value="sg:acc:m3:pos" xml:id="morph_1.15.1.7-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.15.1.7-msd" name="choice"/>
+          <f name="interpretation">
+           <string>wspólny:adj:sg:acc:m3:pos</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.16-seg" xml:id="morph_1.16-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>urlop</string>
+        </f>
+        <!-- urlop [90,5] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.16.1-lex">
+          <f name="base">
+           <string>urlop</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:m3" xml:id="morph_1.16.1.1-msd"/>
+            <symbol value="sg:acc:m3" xml:id="morph_1.16.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.16.1.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>urlop:subst:sg:acc:m3</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.17-seg" xml:id="morph_1.17-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>do</string>
+        </f>
+        <!-- do [96,2] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.17.1-lex">
+          <f name="base">
+           <string>do</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <symbol value="gen" xml:id="morph_1.17.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.17.2-lex">
+          <f name="base">
+           <string>do</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:n" xml:id="morph_1.17.2.1-msd"/>
+            <symbol value="sg:gen:n" xml:id="morph_1.17.2.2-msd"/>
+            <symbol value="sg:dat:n" xml:id="morph_1.17.2.3-msd"/>
+            <symbol value="sg:acc:n" xml:id="morph_1.17.2.4-msd"/>
+            <symbol value="sg:inst:n" xml:id="morph_1.17.2.5-msd"/>
+            <symbol value="sg:loc:n" xml:id="morph_1.17.2.6-msd"/>
+            <symbol value="sg:voc:n" xml:id="morph_1.17.2.7-msd"/>
+            <symbol value="pl:nom:n" xml:id="morph_1.17.2.8-msd"/>
+            <symbol value="pl:gen:n" xml:id="morph_1.17.2.9-msd"/>
+            <symbol value="pl:dat:n" xml:id="morph_1.17.2.10-msd"/>
+            <symbol value="pl:acc:n" xml:id="morph_1.17.2.11-msd"/>
+            <symbol value="pl:inst:n" xml:id="morph_1.17.2.12-msd"/>
+            <symbol value="pl:loc:n" xml:id="morph_1.17.2.13-msd"/>
+            <symbol value="pl:voc:n" xml:id="morph_1.17.2.14-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.17.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>do:prep:gen</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.18-seg" xml:id="morph_1.18-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Tajlandii</string>
+        </f>
+        <!-- Tajlandii [99,9] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.18.1-lex">
+          <f name="base">
+           <string>Tajlandia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:gen:f" xml:id="morph_1.18.1.1-msd"/>
+            <symbol value="sg:dat:f" xml:id="morph_1.18.1.2-msd"/>
+            <symbol value="sg:loc:f" xml:id="morph_1.18.1.3-msd"/>
+            <symbol value="pl:gen:f" xml:id="morph_1.18.1.4-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.18.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Tajlandia:subst:sg:gen:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.19-seg" xml:id="morph_1.19-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>.</string>
+        </f>
+        <!-- . [108,1] -->
+        <f name="nps">
+         <binary value="true"/>
+        </f>
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.19.1-lex">
+          <f name="base">
+           <string>.</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.19.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.19.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>.:interp</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+     </s>
+     <s corresp="ann_segmentation.xml#segm_1.35-s" xml:id="morph_1.35-s">
+      <seg corresp="ann_segmentation.xml#segm_1.20-seg" xml:id="morph_1.20-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Tymczasem</string>
+        </f>
+        <!-- Tymczasem [110,9] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.20.1-lex">
+          <f name="base">
+           <string>tymczasem</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adv"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.20.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.20.2-lex">
+          <f name="base">
+           <string>tymczasem</string>
+          </f>
+          <f name="ctag">
+           <symbol value="conj"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.20.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.20.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>tymczasem:adv</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.21-seg" xml:id="morph_1.21-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Strunz</string>
+        </f>
+        <!-- Strunz [120,6] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.21.1-lex">
+          <f name="base">
+           <string/>
+          </f>
+          <f name="ctag">
+           <symbol value="ign"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.21.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.21.2-lex">
+          <f name="base">
+           <string>Strunz</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:nom:m1" xml:id="morph_1.21.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.21.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Strunz:subst:sg:nom:m1</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.22-seg" xml:id="morph_1.22-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>w</string>
+        </f>
+        <!-- w [127,1] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.22.1-lex">
+          <f name="base">
+           <string>w</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="acc:nwok" xml:id="morph_1.22.1.1-msd"/>
+            <symbol value="loc:nwok" xml:id="morph_1.22.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.22.2-lex">
+          <f name="base">
+           <string>wiek</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.22.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.22.3-lex">
+          <f name="base">
+           <string>wielki</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.22.3.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.22.4-lex">
+          <f name="base">
+           <string>wiersz</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.22.4.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.22.5-lex">
+          <f name="base">
+           <string>wieś</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.22.5.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.22.6-lex">
+          <f name="base">
+           <string>wyspa</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.22.6.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.22.1.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>w:prep:loc:nwok</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.23-seg" xml:id="morph_1.23-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Kolonii</string>
+        </f>
+        <!-- Kolonii [129,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.23.1-lex">
+          <f name="base">
+           <string>kolonia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:gen:f" xml:id="morph_1.23.1.1-msd"/>
+            <symbol value="sg:dat:f" xml:id="morph_1.23.1.2-msd"/>
+            <symbol value="sg:loc:f" xml:id="morph_1.23.1.3-msd"/>
+            <symbol value="pl:gen:f" xml:id="morph_1.23.1.4-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.23.2-lex">
+          <f name="base">
+           <string>kolonie</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="pl:gen:n" xml:id="morph_1.23.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.23.3-lex">
+          <f name="base">
+           <string>Kolonia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:loc:f" xml:id="morph_1.23.3.2-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.23.3.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Kolonia:subst:sg:loc:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.24-seg" xml:id="morph_1.24-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>zajmuje</string>
+        </f>
+        <!-- zajmuje [137,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.24.1-lex">
+          <f name="base">
+           <string>zajmować</string>
+          </f>
+          <f name="ctag">
+           <symbol value="fin"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:ter:imperf" xml:id="morph_1.24.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.24.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>zajmować:fin:sg:ter:imperf</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.25-seg" xml:id="morph_1.25-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>się</string>
+        </f>
+        <!-- się [145,3] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.25.1-lex">
+          <f name="base">
+           <string>się</string>
+          </f>
+          <f name="ctag">
+           <symbol value="qub"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.25.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.25.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>się:qub</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.26-seg" xml:id="morph_1.26-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>dwójką</string>
+        </f>
+        <!-- dwójką [149,6] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.26.1-lex">
+          <f name="base">
+           <string>dwójka</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:inst:f" xml:id="morph_1.26.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.26.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>dwójka:subst:sg:inst:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.27-seg" xml:id="morph_1.27-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>dzieci</string>
+        </f>
+        <!-- dzieci [156,6] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.27.1-lex">
+          <f name="base">
+           <string>dziecko</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="pl:nom:n" xml:id="morph_1.27.1.1-msd"/>
+            <symbol value="pl:gen:n" xml:id="morph_1.27.1.2-msd"/>
+            <symbol value="pl:acc:n" xml:id="morph_1.27.1.3-msd"/>
+            <symbol value="pl:voc:n" xml:id="morph_1.27.1.4-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.27.1.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>dziecko:subst:pl:gen:n</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.28-seg" xml:id="morph_1.28-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>-</string>
+        </f>
+        <!-- - [163,1] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.28.1-lex">
+          <f name="base">
+           <string>-</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.28.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.28.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>-:interp</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.29-seg" xml:id="morph_1.29-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>3-letnią</string>
+        </f>
+        <!-- 3-letnią [165,8] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.29.1-lex">
+          <f name="base">
+           <string/>
+          </f>
+          <f name="ctag">
+           <symbol value="ign"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.29.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.29.2-lex">
+          <f name="base">
+           <string>3-letnia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adj"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:inst:f:pos" xml:id="morph_1.29.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.29.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>3-letnia:adj:sg:inst:f:pos</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.30-seg" xml:id="morph_1.30-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>córeczką</string>
+        </f>
+        <!-- córeczką [174,8] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.30.1-lex">
+          <f name="base">
+           <string>córeczka</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:inst:f" xml:id="morph_1.30.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.30.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>córeczka:subst:sg:inst:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.31-seg" xml:id="morph_1.31-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Lucią</string>
+        </f>
+        <!-- Lucią [183,5] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.31.1-lex">
+          <f name="base">
+           <string>Lucia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:inst:f" xml:id="morph_1.31.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.31.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Lucia:subst:sg:inst:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.32-seg" xml:id="morph_1.32-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>i</string>
+        </f>
+        <!-- i [189,1] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.32.1-lex">
+          <f name="base">
+           <string>i</string>
+          </f>
+          <f name="ctag">
+           <symbol value="conj"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.32.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.32.2-lex">
+          <f name="base">
+           <string>i</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interj"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.32.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.32.3-lex">
+          <f name="base">
+           <string>i</string>
+          </f>
+          <f name="ctag">
+           <symbol value="qub"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.32.3.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.32.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>i:conj</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.33-seg" xml:id="morph_1.33-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>półtorarocznym</string>
+        </f>
+        <!-- półtorarocznym [191,14] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.33.1-lex">
+          <f name="base">
+           <string>półtoraroczny</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adj"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:inst:m1:pos" xml:id="morph_1.33.1.1-msd"/>
+            <symbol value="sg:inst:m2:pos" xml:id="morph_1.33.1.2-msd"/>
+            <symbol value="sg:inst:m3:pos" xml:id="morph_1.33.1.3-msd"/>
+            <symbol value="sg:inst:n:pos" xml:id="morph_1.33.1.4-msd"/>
+            <symbol value="sg:loc:m1:pos" xml:id="morph_1.33.1.5-msd"/>
+            <symbol value="sg:loc:m2:pos" xml:id="morph_1.33.1.6-msd"/>
+            <symbol value="sg:loc:m3:pos" xml:id="morph_1.33.1.7-msd"/>
+            <symbol value="sg:loc:n:pos" xml:id="morph_1.33.1.8-msd"/>
+            <symbol value="pl:dat:m1:pos" xml:id="morph_1.33.1.9-msd"/>
+            <symbol value="pl:dat:m2:pos" xml:id="morph_1.33.1.10-msd"/>
+            <symbol value="pl:dat:m3:pos" xml:id="morph_1.33.1.11-msd"/>
+            <symbol value="pl:dat:f:pos" xml:id="morph_1.33.1.12-msd"/>
+            <symbol value="pl:dat:n:pos" xml:id="morph_1.33.1.13-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.33.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>półtoraroczny:adj:sg:inst:m1:pos</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.34-seg" xml:id="morph_1.34-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Thommym</string>
+        </f>
+        <!-- Thommym [206,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.34.1-lex">
+          <f name="base">
+           <string/>
+          </f>
+          <f name="ctag">
+           <symbol value="ign"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.34.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.34.2-lex">
+          <f name="base">
+           <string>Thommy</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:inst:m1" xml:id="morph_1.34.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.34.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Thommy:subst:sg:inst:m1</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.35-seg" xml:id="morph_1.35-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>.</string>
+        </f>
+        <!-- . [213,1] -->
+        <f name="nps">
+         <binary value="true"/>
+        </f>
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.35.1-lex">
+          <f name="base">
+           <string>.</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.35.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.35.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>.:interp</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+     </s>
+     <s corresp="ann_segmentation.xml#segm_1.42-s" xml:id="morph_1.42-s">
+      <seg corresp="ann_segmentation.xml#segm_1.36-seg" xml:id="morph_1.36-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Co</string>
+        </f>
+        <!-- Co [215,2] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.36.1-lex">
+          <f name="base">
+           <string>CO</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:n" xml:id="morph_1.36.1.1-msd"/>
+            <symbol value="sg:gen:n" xml:id="morph_1.36.1.2-msd"/>
+            <symbol value="sg:dat:n" xml:id="morph_1.36.1.3-msd"/>
+            <symbol value="sg:acc:n" xml:id="morph_1.36.1.4-msd"/>
+            <symbol value="sg:inst:n" xml:id="morph_1.36.1.5-msd"/>
+            <symbol value="sg:loc:n" xml:id="morph_1.36.1.6-msd"/>
+            <symbol value="sg:voc:n" xml:id="morph_1.36.1.7-msd"/>
+            <symbol value="pl:nom:n" xml:id="morph_1.36.1.8-msd"/>
+            <symbol value="pl:gen:n" xml:id="morph_1.36.1.9-msd"/>
+            <symbol value="pl:dat:n" xml:id="morph_1.36.1.10-msd"/>
+            <symbol value="pl:acc:n" xml:id="morph_1.36.1.11-msd"/>
+            <symbol value="pl:inst:n" xml:id="morph_1.36.1.12-msd"/>
+            <symbol value="pl:loc:n" xml:id="morph_1.36.1.13-msd"/>
+            <symbol value="pl:voc:n" xml:id="morph_1.36.1.14-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.36.2-lex">
+          <f name="base">
+           <string>co</string>
+          </f>
+          <f name="ctag">
+           <symbol value="comp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.36.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.36.3-lex">
+          <f name="base">
+           <string>co</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="nom" xml:id="morph_1.36.3.1-msd"/>
+            <symbol value="acc" xml:id="morph_1.36.3.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.36.4-lex">
+          <f name="base">
+           <string>co</string>
+          </f>
+          <f name="ctag">
+           <symbol value="qub"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.36.4.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.36.5-lex">
+          <f name="base">
+           <string>co</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:n" xml:id="morph_1.36.5.1-msd"/>
+            <symbol value="sg:gen:n" xml:id="morph_1.36.5.2-msd"/>
+            <symbol value="sg:acc:n" xml:id="morph_1.36.5.3-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.36.3.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>co:prep:acc</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.37-seg" xml:id="morph_1.37-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>rano</string>
+        </f>
+        <!-- rano [218,4] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.37.1-lex">
+          <f name="base">
+           <string>rana</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:voc:f" xml:id="morph_1.37.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.37.2-lex">
+          <f name="base">
+           <string>rano</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adv"/>
+          </f>
+          <f name="msd">
+           <symbol value="pos" xml:id="morph_1.37.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.37.3-lex">
+          <f name="base">
+           <string>rano</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:n" xml:id="morph_1.37.3.1-msd"/>
+            <symbol value="sg:acc:n" xml:id="morph_1.37.3.2-msd"/>
+            <symbol value="sg:voc:n" xml:id="morph_1.37.3.3-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.37.3.2-msd" name="choice"/>
+          <f name="interpretation">
+           <string>rano:subst:sg:acc:n</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.38-seg" xml:id="morph_1.38-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>odprowadza</string>
+        </f>
+        <!-- odprowadza [223,10] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.38.1-lex">
+          <f name="base">
+           <string>odprowadzać</string>
+          </f>
+          <f name="ctag">
+           <symbol value="fin"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:ter:imperf" xml:id="morph_1.38.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.38.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>odprowadzać:fin:sg:ter:imperf</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.39-seg" xml:id="morph_1.39-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Lucię</string>
+        </f>
+        <!-- Lucię [234,5] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.39.1-lex">
+          <f name="base">
+           <string>Lucia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:acc:f" xml:id="morph_1.39.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.39.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Lucia:subst:sg:acc:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.40-seg" xml:id="morph_1.40-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>do</string>
+        </f>
+        <!-- do [240,2] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.40.1-lex">
+          <f name="base">
+           <string>do</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <symbol value="gen" xml:id="morph_1.40.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.40.2-lex">
+          <f name="base">
+           <string>do</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:n" xml:id="morph_1.40.2.1-msd"/>
+            <symbol value="sg:gen:n" xml:id="morph_1.40.2.2-msd"/>
+            <symbol value="sg:dat:n" xml:id="morph_1.40.2.3-msd"/>
+            <symbol value="sg:acc:n" xml:id="morph_1.40.2.4-msd"/>
+            <symbol value="sg:inst:n" xml:id="morph_1.40.2.5-msd"/>
+            <symbol value="sg:loc:n" xml:id="morph_1.40.2.6-msd"/>
+            <symbol value="sg:voc:n" xml:id="morph_1.40.2.7-msd"/>
+            <symbol value="pl:nom:n" xml:id="morph_1.40.2.8-msd"/>
+            <symbol value="pl:gen:n" xml:id="morph_1.40.2.9-msd"/>
+            <symbol value="pl:dat:n" xml:id="morph_1.40.2.10-msd"/>
+            <symbol value="pl:acc:n" xml:id="morph_1.40.2.11-msd"/>
+            <symbol value="pl:inst:n" xml:id="morph_1.40.2.12-msd"/>
+            <symbol value="pl:loc:n" xml:id="morph_1.40.2.13-msd"/>
+            <symbol value="pl:voc:n" xml:id="morph_1.40.2.14-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.40.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>do:prep:gen</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.41-seg" xml:id="morph_1.41-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>przedszkola</string>
+        </f>
+        <!-- przedszkola [243,11] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.41.1-lex">
+          <f name="base">
+           <string>przedszkole</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:gen:n" xml:id="morph_1.41.1.1-msd"/>
+            <symbol value="pl:nom:n" xml:id="morph_1.41.1.2-msd"/>
+            <symbol value="pl:acc:n" xml:id="morph_1.41.1.3-msd"/>
+            <symbol value="pl:voc:n" xml:id="morph_1.41.1.4-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.41.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>przedszkole:subst:sg:gen:n</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.42-seg" xml:id="morph_1.42-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>!</string>
+        </f>
+        <!-- ! [254,1] -->
+        <f name="nps">
+         <binary value="true"/>
+        </f>
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.42.1-lex">
+          <f name="base">
+           <string>!</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.42.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.42.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>!:interp</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+     </s>
+     <s corresp="ann_segmentation.xml#segm_1.60-s" xml:id="morph_1.60-s">
+      <seg corresp="ann_segmentation.xml#segm_1.43-seg" xml:id="morph_1.43-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Blondwłosy</string>
+        </f>
+        <!-- Blondwłosy [256,10] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.43.1-lex">
+          <f name="base">
+           <string/>
+          </f>
+          <f name="ctag">
+           <symbol value="ign"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.43.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.43.2-lex">
+          <f name="base">
+           <string>blondwłosy</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adj"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:nom:m1:pos" xml:id="morph_1.43.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.43.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>blondwłosy:adj:sg:nom:m1:pos</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.44-seg" xml:id="morph_1.44-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>rozgrywający</string>
+        </f>
+        <!-- rozgrywający [267,12] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.44.1-lex">
+          <f name="base">
+           <string>rozgrywać</string>
+          </f>
+          <f name="ctag">
+           <symbol value="pact"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:m1:imperf:aff" xml:id="morph_1.44.1.1-msd"/>
+            <symbol value="sg:nom:m2:imperf:aff" xml:id="morph_1.44.1.2-msd"/>
+            <symbol value="sg:nom:m3:imperf:aff" xml:id="morph_1.44.1.3-msd"/>
+            <symbol value="sg:acc:m3:imperf:aff" xml:id="morph_1.44.1.4-msd"/>
+            <symbol value="pl:nom:m1:imperf:aff" xml:id="morph_1.44.1.5-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.44.2-lex">
+          <f name="base">
+           <string>rozgrywający</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:nom:m1" xml:id="morph_1.44.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.44.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>rozgrywający:subst:sg:nom:m1</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.45-seg" xml:id="morph_1.45-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>poderwał</string>
+        </f>
+        <!-- poderwał [280,8] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.45.1-lex">
+          <f name="base">
+           <string>poderwać</string>
+          </f>
+          <f name="ctag">
+           <symbol value="praet"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:m1:perf" xml:id="morph_1.45.1.1-msd"/>
+            <symbol value="sg:m2:perf" xml:id="morph_1.45.1.2-msd"/>
+            <symbol value="sg:m3:perf" xml:id="morph_1.45.1.3-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.45.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>poderwać:praet:sg:m1:perf</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.46-seg" xml:id="morph_1.46-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Claudię</string>
+        </f>
+        <!-- Claudię [289,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.46.1-lex">
+          <f name="base">
+           <string/>
+          </f>
+          <f name="ctag">
+           <symbol value="ign"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.46.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.46.2-lex">
+          <f name="base">
+           <string>Claudia</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:acc:f" xml:id="morph_1.46.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.46.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Claudia:subst:sg:acc:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.47-seg" xml:id="morph_1.47-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>,</string>
+        </f>
+        <!-- , [296,1] -->
+        <f name="nps">
+         <binary value="true"/>
+        </f>
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.47.1-lex">
+          <f name="base">
+           <string>,</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.47.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.47.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>,:interp</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.48-seg" xml:id="morph_1.48-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>która</string>
+        </f>
+        <!-- która [298,5] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.48.1-lex">
+          <f name="base">
+           <string>który</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adj"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:f:pos" xml:id="morph_1.48.1.1-msd"/>
+            <symbol value="sg:voc:f:pos" xml:id="morph_1.48.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.48.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>który:adj:sg:nom:f:pos</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.49-seg" xml:id="morph_1.49-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>od</string>
+        </f>
+        <!-- od [304,2] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.49.1-lex">
+          <f name="base">
+           <string>Oda</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="pl:gen:f" xml:id="morph_1.49.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.49.2-lex">
+          <f name="base">
+           <string>od</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <symbol value="gen:nwok" xml:id="morph_1.49.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.49.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>od:prep:gen:nwok</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.50-seg" xml:id="morph_1.50-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>półtora</string>
+        </f>
+        <!-- półtora [307,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.50.1-lex">
+          <f name="base">
+           <string>półtora</string>
+          </f>
+          <f name="ctag">
+           <symbol value="num"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:nom:m1:rec" xml:id="morph_1.50.1.1-msd"/>
+            <symbol value="sg:nom:m2:rec" xml:id="morph_1.50.1.2-msd"/>
+            <symbol value="sg:nom:m3:rec" xml:id="morph_1.50.1.3-msd"/>
+            <symbol value="sg:nom:n:rec" xml:id="morph_1.50.1.4-msd"/>
+            <symbol value="sg:gen:m1:rec" xml:id="morph_1.50.1.5-msd"/>
+            <symbol value="sg:gen:m2:rec" xml:id="morph_1.50.1.6-msd"/>
+            <symbol value="sg:gen:m3:rec" xml:id="morph_1.50.1.7-msd"/>
+            <symbol value="sg:gen:n:rec" xml:id="morph_1.50.1.8-msd"/>
+            <symbol value="sg:dat:m1:rec" xml:id="morph_1.50.1.9-msd"/>
+            <symbol value="sg:dat:m2:rec" xml:id="morph_1.50.1.10-msd"/>
+            <symbol value="sg:dat:m3:rec" xml:id="morph_1.50.1.11-msd"/>
+            <symbol value="sg:dat:n:rec" xml:id="morph_1.50.1.12-msd"/>
+            <symbol value="sg:acc:m1:rec" xml:id="morph_1.50.1.13-msd"/>
+            <symbol value="sg:acc:m2:rec" xml:id="morph_1.50.1.14-msd"/>
+            <symbol value="sg:acc:m3:rec" xml:id="morph_1.50.1.15-msd"/>
+            <symbol value="sg:acc:n:rec" xml:id="morph_1.50.1.16-msd"/>
+            <symbol value="sg:inst:m1:rec" xml:id="morph_1.50.1.17-msd"/>
+            <symbol value="sg:inst:m2:rec" xml:id="morph_1.50.1.18-msd"/>
+            <symbol value="sg:inst:m3:rec" xml:id="morph_1.50.1.19-msd"/>
+            <symbol value="sg:inst:n:rec" xml:id="morph_1.50.1.20-msd"/>
+            <symbol value="sg:loc:m1:rec" xml:id="morph_1.50.1.21-msd"/>
+            <symbol value="sg:loc:m2:rec" xml:id="morph_1.50.1.22-msd"/>
+            <symbol value="sg:loc:m3:rec" xml:id="morph_1.50.1.23-msd"/>
+            <symbol value="sg:loc:n:rec" xml:id="morph_1.50.1.24-msd"/>
+            <symbol value="sg:voc:m1:rec" xml:id="morph_1.50.1.25-msd"/>
+            <symbol value="sg:voc:m2:rec" xml:id="morph_1.50.1.26-msd"/>
+            <symbol value="sg:voc:m3:rec" xml:id="morph_1.50.1.27-msd"/>
+            <symbol value="sg:voc:n:rec" xml:id="morph_1.50.1.28-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.50.2-lex">
+          <f name="base">
+           <string>półtora</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:gen:n" xml:id="morph_1.50.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.50.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>półtora:subst:sg:gen:n</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.51-seg" xml:id="morph_1.51-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>roku</string>
+        </f>
+        <!-- roku [315,4] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.51.1-lex">
+          <f name="base">
+           <string>rok</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:gen:m3" xml:id="morph_1.51.1.1-msd"/>
+            <symbol value="sg:loc:m3" xml:id="morph_1.51.1.2-msd"/>
+            <symbol value="sg:voc:m3" xml:id="morph_1.51.1.3-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.51.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>rok:subst:sg:gen:m3</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.52-seg" xml:id="morph_1.52-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>jest</string>
+        </f>
+        <!-- jest [320,4] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.52.1-lex">
+          <f name="base">
+           <string>być</string>
+          </f>
+          <f name="ctag">
+           <symbol value="fin"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:ter:imperf" xml:id="morph_1.52.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.52.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>być:fin:sg:ter:imperf</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.53-seg" xml:id="morph_1.53-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>żoną</string>
+        </f>
+        <!-- żoną [325,4] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.53.1-lex">
+          <f name="base">
+           <string>żona</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:inst:f" xml:id="morph_1.53.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.53.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>żona:subst:sg:inst:f</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.54-seg" xml:id="morph_1.54-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>byłego</string>
+        </f>
+        <!-- byłego [330,6] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.54.1-lex">
+          <f name="base">
+           <string>były</string>
+          </f>
+          <f name="ctag">
+           <symbol value="adj"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:gen:m1:pos" xml:id="morph_1.54.1.1-msd"/>
+            <symbol value="sg:gen:m2:pos" xml:id="morph_1.54.1.2-msd"/>
+            <symbol value="sg:gen:m3:pos" xml:id="morph_1.54.1.3-msd"/>
+            <symbol value="sg:gen:n:pos" xml:id="morph_1.54.1.4-msd"/>
+            <symbol value="sg:acc:m1:pos" xml:id="morph_1.54.1.5-msd"/>
+            <symbol value="sg:acc:m2:pos" xml:id="morph_1.54.1.6-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.54.2-lex">
+          <f name="base">
+           <string>były</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:gen:m1" xml:id="morph_1.54.2.1-msd"/>
+            <symbol value="sg:acc:m1" xml:id="morph_1.54.2.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.54.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>były:adj:sg:gen:m1:pos</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.55-seg" xml:id="morph_1.55-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>kolegi</string>
+        </f>
+        <!-- kolegi [337,6] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.55.1-lex">
+          <f name="base">
+           <string>kolega</string>
+          </f>
+          <f name="ctag">
+           <symbol value="depr"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="pl:nom:m2" xml:id="morph_1.55.1.1-msd"/>
+            <symbol value="pl:voc:m2" xml:id="morph_1.55.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.55.2-lex">
+          <f name="base">
+           <string>kolega</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:gen:m1" xml:id="morph_1.55.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.55.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>kolega:subst:sg:gen:m1</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.56-seg" xml:id="morph_1.56-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>z</string>
+        </f>
+        <!-- z [344,1] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.56.1-lex">
+          <f name="base">
+           <string>z</string>
+          </f>
+          <f name="ctag">
+           <symbol value="prep"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="gen:nwok" xml:id="morph_1.56.1.1-msd"/>
+            <symbol value="acc:nwok" xml:id="morph_1.56.1.2-msd"/>
+            <symbol value="inst:nwok" xml:id="morph_1.56.1.3-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.56.2-lex">
+          <f name="base">
+           <string>z</string>
+          </f>
+          <f name="ctag">
+           <symbol value="qub"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.56.2.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.56.3-lex">
+          <f name="base">
+           <string>zeszyt</string>
+          </f>
+          <f name="ctag">
+           <symbol value="brev"/>
+          </f>
+          <f name="msd">
+           <symbol value="pun" xml:id="morph_1.56.3.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.56.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>z:prep:gen:nwok</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.57-seg" xml:id="morph_1.57-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Bayernu</string>
+        </f>
+        <!-- Bayernu [346,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.57.1-lex">
+          <f name="base">
+           <string>Bayern</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol value="sg:gen:m3" xml:id="morph_1.57.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.57.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Bayern:subst:sg:gen:m3</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.58-seg" xml:id="morph_1.58-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Thomasa</string>
+        </f>
+        <!-- Thomasa [354,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.58.1-lex">
+          <f name="base">
+           <string>Thomas</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <vAlt>
+            <symbol value="sg:gen:m1" xml:id="morph_1.58.1.1-msd"/>
+            <symbol value="sg:acc:m1" xml:id="morph_1.58.1.2-msd"/>
+           </vAlt>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.58.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Thomas:subst:sg:gen:m1</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.59-seg" xml:id="morph_1.59-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>Strunza</string>
+        </f>
+        <!-- Strunza [362,7] -->
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.59.1-lex">
+          <f name="base">
+           <string/>
+          </f>
+          <f name="ctag">
+           <symbol value="ign"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.59.1.1-msd"/>
+          </f>
+         </fs>
+         <fs type="lex" xml:id="morph_1.59.2-lex">
+          <f name="base">
+           <string>Strunz</string>
+          </f>
+          <f name="ctag">
+           <symbol value="subst"/>
+          </f>
+          <f name="msd">
+           <symbol nkjp:manual="true" value="sg:gen:m1" xml:id="morph_1.59.2.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.59.2.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>Strunz:subst:sg:gen:m1</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.60-seg" xml:id="morph_1.60-seg">
+       <fs type="morph">
+        <f name="orth">
+         <string>!</string>
+        </f>
+        <!-- ! [369,1] -->
+        <f name="nps">
+         <binary value="true"/>
+        </f>
+        <f name="interps">
+         <fs type="lex" xml:id="morph_1.60.1-lex">
+          <f name="base">
+           <string>!</string>
+          </f>
+          <f name="ctag">
+           <symbol value="interp"/>
+          </f>
+          <f name="msd">
+           <symbol value="" xml:id="morph_1.60.1.1-msd"/>
+          </f>
+         </fs>
+        </f>
+        <f name="disamb">
+         <fs feats="#an8003" type="tool_report">
+          <f fVal="#morph_1.60.1.1-msd" name="choice"/>
+          <f name="interpretation">
+           <string>!:interp</string>
+          </f>
+         </fs>
+        </f>
+       </fs>
+      </seg>
+     </s>
+    </p>
+   </body>
+  </text>
+ </TEI>
+</teiCorpus>

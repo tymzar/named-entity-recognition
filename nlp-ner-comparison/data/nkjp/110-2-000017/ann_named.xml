@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<teiCorpus xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
+  <xi:include href="NKJP_1M_header.xml"/>
+  <TEI>
+    <xi:include href="header.xml"/>
+    <text xml:lang="pl">
+      <body>
+        <p xml:id="named_1-p" corresp="ann_morphosyntax.xml#morph_1-p">
+          <s xml:id="named_1.17-s" corresp="ann_morphosyntax.xml#morph_1.17-s"/>
+          <s xml:id="named_1.44-s" corresp="ann_morphosyntax.xml#morph_1.44-s"/>
+          <s xml:id="named_1.54-s" corresp="ann_morphosyntax.xml#morph_1.54-s"/>
+        </p>
+        <p xml:id="named_2-p" corresp="ann_morphosyntax.xml#morph_2-p">
+          <s xml:id="named_2.30-s" corresp="ann_morphosyntax.xml#morph_2.30-s"/>
+          <s xml:id="named_2.38-s" corresp="ann_morphosyntax.xml#morph_2.38-s"/>
+          <s xml:id="named_2.54-s" corresp="ann_morphosyntax.xml#morph_2.54-s"/>
+          <s xml:id="named_2.77-s" corresp="ann_morphosyntax.xml#morph_2.77-s"/>
+        </p>
+        <p xml:id="named_3-p" corresp="ann_morphosyntax.xml#morph_3-p">
+          <s xml:id="named_3.16-s" corresp="ann_morphosyntax.xml#morph_3.16-s"/>
+          <s xml:id="named_3.51-s" corresp="ann_morphosyntax.xml#morph_3.51-s"/>
+          <s xml:id="named_3.62-s" corresp="ann_morphosyntax.xml#morph_3.62-s"/>
+        </p>
+        <p xml:id="named_4-p" corresp="ann_morphosyntax.xml#morph_4-p">
+          <s xml:id="named_4.12-s" corresp="ann_morphosyntax.xml#morph_4.12-s">
+            <seg xml:id="named_4.12-s_n2">
+              <fs type="named">
+                <f name="type">
+                  <symbol value="persName"/>
+                </f>
+                <f name="orth">
+                  <string>Dobbs</string>
+                </f>
+                <f name="base">
+                  <string>Dobbs</string>
+                </f>
+                <f name="certainty">
+                  <symbol value="high"/>
+                </f>
+              </fs>
+              <ptr target="named_4.12-s_n1"/>
+            </seg>
+            <seg xml:id="named_4.12-s_n1">
+              <fs type="named">
+                <f name="type">
+                  <symbol value="persName"/>
+                </f>
+                <f name="subtype">
+                  <symbol value="surname"/>
+                </f>
+                <f name="orth">
+                  <string>Dobbs</string>
+                </f>
+                <f name="base">
+                  <string>Dobbs</string>
+                </f>
+                <f name="certainty">
+                  <symbol value="high"/>
+                </f>
+              </fs>
+              <ptr target="ann_morphosyntax.xml#morph_4.1-seg"/>
+            </seg>
+          </s>
+          <s xml:id="named_4.40-s" corresp="ann_morphosyntax.xml#morph_4.40-s"/>
+          <s xml:id="named_4.74-s" corresp="ann_morphosyntax.xml#morph_4.74-s">
+            <seg xml:id="named_4.74-s_n1">
+              <fs type="named">
+                <f name="type">
+                  <symbol value="geogName"/>
+                </f>
+                <f name="orth">
+                  <string>Morzem Południowochińskim</string>
+                </f>
+                <f name="base">
+                  <string>Morze Południowochińskie</string>
+                </f>
+                <f name="certainty">
+                  <symbol value="high"/>
+                </f>
+              </fs>
+              <ptr target="ann_morphosyntax.xml#morph_4.59-seg"/>
+              <ptr target="named_4.74-s_n2"/>
+            </seg>
+            <seg xml:id="named_4.74-s_n2">
+              <fs type="named">
+                <f name="derived">
+                  <fs type="derivation">
+                    <f name="derivType">
+                      <symbol value="relAdj"/>
+                    </f>
+                    <f name="derivedFrom">
+                      <string>Chiny</string>
+                    </f>
+                  </fs>
+                </f>
+                <f name="type">
+                  <symbol value="placeName"/>
+                </f>
+                <f name="subtype">
+                  <symbol value="country"/>
+                </f>
+                <f name="orth">
+                  <string>Południowochińskim</string>
+                </f>
+                <f name="base">
+                  <string>południowochiński</string>
+                </f>
+                <f name="certainty">
+                  <symbol value="high"/>
+                </f>
+              </fs>
+              <ptr target="ann_morphosyntax.xml#morph_4.60-seg"/>
+            </seg>
+          </s>
+        </p>
+      </body>
+    </text>
+  </TEI>
+</teiCorpus>

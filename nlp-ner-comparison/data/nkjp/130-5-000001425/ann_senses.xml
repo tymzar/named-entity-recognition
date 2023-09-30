@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+ <xi:include href="NKJP_1M_header.xml"/>
+ <TEI>
+  <xi:include href="header.xml"/>
+  <text xml:lang="pl">
+   <body>
+    <!-- senses_1-p is akapit 10897 with instances (akapit_transzy-s) 21775, 21795 in batches (transza-s) 2178, 2180 resp. -->
+    <p corresp="ann_segmentation.xml#segm_1-p" xml:id="senses_1-p">
+     <s xml:id="senses_1.21-s" corresp="ann_segmentation.xml#segm_1.21-s"/>
+     <s xml:id="senses_1.30-s" corresp="ann_segmentation.xml#segm_1.30-s"/>
+     <s xml:id="senses_1.43-s" corresp="ann_segmentation.xml#segm_1.43-s"/>
+     <s xml:id="senses_1.49-s" corresp="ann_segmentation.xml#segm_1.49-s"/>
+     <s xml:id="senses_1.56-s" corresp="ann_segmentation.xml#segm_1.56-s"/>
+     <s corresp="ann_segmentation.xml#segm_1.71-s" xml:id="senses_1.71-s">
+      <seg corresp="ann_segmentation.xml#segm_1.64-seg" xml:id="senses_1.64-seg">
+       <!-- powodu [364,6] -->
+       <fs type="sense">
+        <f fVal="NKJP_WSI.xml#powod.1" name="sense"/>
+       </fs>
+      </seg>
+      <seg corresp="ann_segmentation.xml#segm_1.70-seg" xml:id="senses_1.70-seg">
+       <!-- rządu [407,5] -->
+       <fs type="sense">
+        <f fVal="NKJP_WSI.xml#rzad.1" name="sense"/>
+       </fs>
+      </seg>
+     </s>
+    </p>
+   </body>
+  </text>
+ </TEI>
+</teiCorpus>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiHeader xmlns="http://www.tei-c.org/ns/1.0" xmlns:nkjp="http://www.nkjp.pl/ns/1.0" xml:lang="en" xml:id="NKJP_1M_3104000000102">
+ <fileDesc>
+  <titleStmt>
+   <title>TEI P5 encoded version of sample(s) of "Dzienniki"</title>
+  </titleStmt>
+  <extent nkjp:file="text.xml">
+   <num type="word" value="95"/>
+  </extent>
+  <publicationStmt nkjp:subcorpus="one_million">
+   <availability status="free">
+    <p>See the licence agreement.</p>
+   </availability>
+  </publicationStmt>
+  <sourceDesc>
+   <bibl xml:id="h_src-bibl">
+    <title xml:lang="pl">Dzienniki</title>
+    <author>Maria Dąbrowska</author>
+    <publisher>PAN</publisher>
+    <pubPlace>Warszawa</pubPlace>
+    <idno type="ISBN">978-83-925392-3-2</idno>
+    <idno type="nkjp">IJPPAN_k123347</idno>
+    <note type="text_origin">IJP PAN</note>
+   </bibl>
+   <listBibl>
+    <bibl xml:id="h_1-bibl">
+     <ptr target="#txt_1-div"/>
+     <idno type="para">p412in424</idno>
+    </bibl>
+    <bibl xml:id="h_2-bibl">
+     <ptr target="#txt_2-div"/>
+     <idno type="para">p410in422</idno>
+    </bibl>
+   </listBibl>
+  </sourceDesc>
+ </fileDesc>
+ <profileDesc>
+  <textClass>
+   <catRef scheme="#taxonomy-NKJP-type" target="#typ_fakt"/>
+   <catRef scheme="#taxonomy-NKJP-channel" target="#kanal_ksiazka"/>
+  </textClass>
+ </profileDesc>
+ <revisionDesc xml:id="changelog_local">
+  <change who="#ldegorski" when="2010-03-25">Creation of text.xml from the corresponding text_structure.xml, by sampling.</change>
+  <change who="#sebastianz" when="2010-03-28">Manual correction of samples.</change>
+  <change who="#ldegorski" when="2010-03-29">Creation of header.xml based on the original header and text.xml, validation.</change>
+ </revisionDesc>
+</teiHeader>

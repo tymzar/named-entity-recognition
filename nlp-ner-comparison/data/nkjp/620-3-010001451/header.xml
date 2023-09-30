@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiHeader xmlns="http://www.tei-c.org/ns/1.0" xmlns:nkjp="http://www.nkjp.pl/ns/1.0" xml:lang="en" xml:id="NKJP_1M_6203010001451">
+ <fileDesc>
+  <titleStmt>
+   <title>TEI P5 encoded version of sample(s) of "Usenet -- pl.soc.dzieci"</title>
+  </titleStmt>
+  <extent nkjp:file="text.xml">
+   <num type="word" value="383"/>
+  </extent>
+  <publicationStmt nkjp:subcorpus="one_million">
+   <availability status="free">
+    <p>See the licence agreement.</p>
+   </availability>
+  </publicationStmt>
+  <sourceDesc>
+   <bibl xml:id="h_src-bibl">
+    <title xml:lang="pl">Usenet -- pl.soc.dzieci</title>
+    <author>"KALINA"</author>
+    <publisher>Usenet</publisher>
+    <idno type="nkjp">PELCRA_6203010001451</idno>
+    <note type="text_origin">PELCRA</note>
+   </bibl>
+   <listBibl>
+    <bibl xml:id="h_1-bibl">
+     <ptr target="#txt_1-div"/>
+     <idno type="para">p3760in104386</idno>
+    </bibl>
+    <bibl xml:id="h_2-bibl">
+     <ptr target="#txt_2-div"/>
+     <idno type="para">p305in7865</idno>
+    </bibl>
+    <bibl xml:id="h_3-bibl">
+     <ptr target="#txt_3-div"/>
+     <idno type="para">p495in12927</idno>
+    </bibl>
+    <bibl xml:id="h_4-bibl">
+     <ptr target="#txt_4-div"/>
+     <idno type="para">p4230in117446</idno>
+    </bibl>
+    <bibl xml:id="h_5-bibl">
+     <ptr target="#txt_5-div"/>
+     <idno type="para">p3761in104409</idno>
+    </bibl>
+    <bibl xml:id="h_6-bibl">
+     <ptr target="#txt_6-div"/>
+     <idno type="para">p1842in50803</idno>
+    </bibl>
+    <bibl xml:id="h_7-bibl">
+     <ptr target="#txt_7-div"/>
+     <idno type="para">p1093in29168</idno>
+    </bibl>
+    <bibl xml:id="h_8-bibl">
+     <ptr target="#txt_8-div"/>
+     <idno type="para">p552in14370</idno>
+    </bibl>
+   </listBibl>
+  </sourceDesc>
+ </fileDesc>
+ <profileDesc>
+  <textClass>
+   <catRef scheme="#taxonomy-NKJP-type" target="#typ_net_interakt"/>
+   <catRef scheme="#taxonomy-NKJP-channel" target="#kanal_internet"/>
+  </textClass>
+ </profileDesc>
+ <revisionDesc xml:id="changelog_local">
+  <change who="#ldegorski" when="2010-04-21">Creation of text.xml from the corresponding text_structure.xml, by sampling.</change>
+  <change who="#sebastianz" when="2010-04-27">Manual correction of samples.</change>
+  <change who="#ldegorski" when="2010-04-28">Creation of header.xml based on the original header and text.xml, validation.</change>
+  <change who="#ldegorski" when="2011-06-22">Correction of terribly wrong string-range for segm_17936.1228608-seg (was (357,-1), corrected to (355,2)). Changes also in ann_morphosyntax (":))" replaced by ":)" in appropriate segment).</change>
+  <change who="#mlenart" when="2011-06-22">Added morphosyntax corrections done by syntax groups and words annotators</change>
+ </revisionDesc>
+</teiHeader>

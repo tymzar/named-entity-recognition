@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiHeader xmlns="http://www.tei-c.org/ns/1.0" xmlns:nkjp="http://www.nkjp.pl/ns/1.0" xml:lang="en" xml:id="NKJP_1M_2004000054">
+ <fileDesc>
+  <titleStmt>
+   <title>TEI P5 encoded version of sample(s) of "Haszyszopenki"</title>
+  </titleStmt>
+  <extent nkjp:file="text.xml">
+   <num type="word" value="285"/>
+  </extent>
+  <publicationStmt nkjp:subcorpus="one_million">
+   <availability status="free">
+    <p>See the licence agreement.</p>
+   </availability>
+  </publicationStmt>
+  <sourceDesc>
+   <bibl xml:id="h_src-bibl">
+    <title xml:lang="pl">Haszyszopenki</title>
+    <author>Jarosław Maślanek</author>
+    <date type="published" when="2008">2008</date>
+    <publisher>W.A.B.</publisher>
+    <pubPlace>Warszawa</pubPlace>
+    <idno type="ISBN">978-83-7414-470-4</idno>
+    <idno type="nkjp">IJPPAN_2004000054</idno>
+    <note type="text_origin">IJP PAN Corpus</note>
+   </bibl>
+   <listBibl>
+    <bibl xml:id="h_1-bibl">
+     <ptr target="#txt_1-div"/>
+     <idno type="para">p720in730</idno>
+    </bibl>
+    <bibl xml:id="h_2-bibl">
+     <ptr target="#txt_2-div"/>
+     <idno type="para">p989in999</idno>
+    </bibl>
+    <bibl xml:id="h_3-bibl">
+     <ptr target="#txt_3-div"/>
+     <idno type="para">p1259in1269</idno>
+    </bibl>
+    <bibl xml:id="h_4-bibl">
+     <ptr target="#txt_4-div"/>
+     <idno type="para">p1251in1261</idno>
+    </bibl>
+    <bibl xml:id="h_5-bibl">
+     <ptr target="#txt_5-div"/>
+     <idno type="para">p824in834</idno>
+    </bibl>
+   </listBibl>
+  </sourceDesc>
+ </fileDesc>
+ <profileDesc>
+  <textClass>
+   <catRef scheme="#taxonomy-NKJP-type" target="#typ_lit"/>
+   <catRef scheme="#taxonomy-NKJP-channel" target="#kanal_ksiazka"/>
+  </textClass>
+ </profileDesc>
+ <revisionDesc xml:id="changelog_local">
+  <change who="#ldegorski" when="2009-11-23">Creation of text.xml from the corresponding pre_text.xml, by sampling.</change>
+  <change who="#sebastianz" when="2009-11-23">Manual correction of samples.</change>
+  <change who="#ldegorski" when="2009-11-23">Creation of header.xml based on the original header and text.xml, validation.</change>
+  <change who="#mlenart" when="2011-06-22">Added morphosyntax corrections done by syntax groups and words annotators</change>
+ </revisionDesc>
+</teiHeader>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<teiCorpus xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0">
+  <xi:include href="NKJP_1M_header.xml"/>
+  <TEI>
+    <xi:include href="header.xml"/>
+    <text xml:lang="pl">
+      <body>
+        <p xml:id="named_1-p" corresp="ann_morphosyntax.xml#morph_1-p">
+          <s xml:id="named_1.29-s" corresp="ann_morphosyntax.xml#morph_1.29-s"/>
+          <s xml:id="named_1.74-s" corresp="ann_morphosyntax.xml#morph_1.74-s">
+            <seg xml:id="named_1.74-s_n2">
+              <fs type="named">
+                <f name="type">
+                  <symbol value="placeName"/>
+                </f>
+                <f name="subtype">
+                  <symbol value="country"/>
+                </f>
+                <f name="orth">
+                  <string>Rzeczypospolitej Polskiej</string>
+                </f>
+                <f name="base">
+                  <string>Rzeczpospolita Polska</string>
+                </f>
+                <f name="certainty">
+                  <symbol value="high"/>
+                </f>
+              </fs>
+              <ptr target="ann_morphosyntax.xml#morph_1.48-seg"/>
+              <ptr target="named_1.74-s_n1"/>
+            </seg>
+            <seg xml:id="named_1.74-s_n1">
+              <fs type="named">
+                <f name="derived">
+                  <fs type="derivation">
+                    <f name="derivType">
+                      <symbol value="relAdj"/>
+                    </f>
+                    <f name="derivedFrom">
+                      <string>Polska</string>
+                    </f>
+                  </fs>
+                </f>
+                <f name="type">
+                  <symbol value="placeName"/>
+                </f>
+                <f name="subtype">
+                  <symbol value="country"/>
+                </f>
+                <f name="orth">
+                  <string>Polskiej</string>
+                </f>
+                <f name="base">
+                  <string>polski</string>
+                </f>
+                <f name="certainty">
+                  <symbol value="high"/>
+                </f>
+              </fs>
+              <ptr target="ann_morphosyntax.xml#morph_1.49-seg"/>
+            </seg>
+          </s>
+        </p>
+        <p xml:id="named_2-p" corresp="ann_morphosyntax.xml#morph_2-p">
+          <s xml:id="named_2.35-s" corresp="ann_morphosyntax.xml#morph_2.35-s"/>
+          <s xml:id="named_2.46-s" corresp="ann_morphosyntax.xml#morph_2.46-s">
+            <seg xml:id="named_2.46-s_n1">
+              <fs type="named">
+                <f name="type">
+                  <symbol value="date"/>
+                </f>
+                <f name="orth">
+                  <string>dniem 1 stycznia 2001 r.</string>
+                </f>
+                <f name="when">
+                  <string>2001-01-01</string>
+                </f>
+                <f name="certainty">
+                  <symbol value="high"/>
+                </f>
+              </fs>
+              <ptr target="ann_morphosyntax.xml#morph_2.41-seg"/>
+              <ptr target="ann_morphosyntax.xml#morph_2.42-seg"/>
+              <ptr target="ann_morphosyntax.xml#morph_2.43-seg"/>
+              <ptr target="ann_morphosyntax.xml#morph_2.44-seg"/>
+              <ptr target="ann_morphosyntax.xml#morph_2.45-seg"/>
+              <ptr target="ann_morphosyntax.xml#morph_2.46-seg"/>
+            </seg>
+          </s>
+        </p>
+      </body>
+    </text>
+  </TEI>
+</teiCorpus>
