@@ -25,6 +25,27 @@ Corpus of Economic News (CEN Corpus): http://www.nlp.pwr.wroc.pl/narzedzia-i-zas
 KPWr (Korpus Języka Polskiego Politechniki Wrocławskiej/Polish Corpus of Wrocław University of Technology): http://plwordnet.pwr.wroc.pl/index.php?option=com_content&view=article&id=35&Itemid=181&lang=pl ; http://plwordnet.pwr.wroc.pl/attachments/article/35/kpwr-1.1.7z (Broda et al., KPWr: Towards a Free Corpus of Polish, 2012)
 NKJP: http://clip.ipipan.waw.pl/NationalCorpusOfPolish?action=AttachFile&do=view&target=NKJP-PodkorpusMilionowy-1.2.tar.gz
 
+### Ready dataset sizes
+
+### Combined dataset cen + kpwr + multinerd + wikineural
+
+```bash
+amount of sentences in iob training data:  5797
+amount of sentences in iob training data:  902
+amount of sentences in iob training data:  875
+amount of sentences in iob training data:  13959
+amount of sentences in iob training data:  4323
+amount of sentences in conllu training data:  155920
+amount of sentences in conllu training data:  19555
+amount of sentences in conllu training data:  19490
+amount of sentences in conllu training data:  108160
+amount of sentences in conllu training data:  13585
+amount of sentences in conllu training data:  13520
+Dataset  train dataset length:  283836 file size:  74.80930137634277 MB
+Dataset  test dataset length:  38365 file size:  10.319704055786133 MB
+Dataset  val dataset length:  33885 file size:  9.536857604980469 MB
+```
+
 ### Data
 
 1. [bsnlp-2019](http://bsnlp.cs.helsinki.fi/bsnlp-2019/shared_task.html)
@@ -40,3 +61,216 @@ NKJP: http://clip.ipipan.waw.pl/NationalCorpusOfPolish?action=AttachFile&do=view
 2. [Go NLP resources](https://github.com/sdadas/polish-nlp-resources)
 3. [Resources](https://github.com/juand-r/entity-recognition-datasets)
 4. [Spacy usage](https://towardsdatascience.com/train-ner-with-custom-training-data-using-spacy-525ce748fab7)
+
+## NER categories
+
+1. Person - PERSON
+2. Money - MONEY
+3. Location/Addres - LOCATION
+4. Email address
+5. Phone number
+6. PESEL
+7. Orgazaizations - ORGNAME
+   Event - EVENT
+8. Time - TIME
+9. Link
+   10 IP (optional)
+10. Token-like strings (optional)
+11. Airports (optional)
+
+### NKJP
+
+Categories - {'GEOGNAME', 'TIME', 'ORGNAME', 'PERSNAME', 'DATE', 'PLACENAME'}
+
+GEOGNAME -> LOCATION
+TIME -> TIME
+ORGNAME -> ORGNAME
+PERSNAME -> PERSON
+DATE -> TIME
+PLACENAME -> LOCATION
+
+### CEN
+
+nam_adj - adjectives
+nam_adj_city -> LOCATION
+nam_adj_country -> LOCATION
+nam_adj_person -> O
+nam_eve_human -> O
+nam_eve_human_cultural -> EVENT
+nam_eve_human_holiday -> EVENT
+nam_eve_human_sport -> EVENT
+nam_fac_goe -> LOCATION
+nam_fac_road -> LOCATION
+nam_fac_square -> O
+nam_fac_system -> O
+nam_liv_god -> O
+nam_liv_habitant -> PERSON
+nam_liv_person -> PERSON
+nam_loc -> LOCATION
+nam_loc_astronomical -> LOCATION
+nam_loc_country_region -> LOCATION
+nam_loc_gpe_admin1 -> LOCATION
+nam_loc_gpe_admin2 -> LOCATION
+nam_loc_gpe_admin3 -> LOCATION
+nam_loc_gpe_city -> LOCATION
+nam_loc_gpe_conurbation -> LOCATION
+nam_loc_gpe_country -> LOCATION
+nam_loc_gpe_district -> LOCATION
+nam_loc_gpe_subdivision -> LOCATION
+nam_loc_historical_region -> LOCATION
+nam_loc_hydronym -> LOCATION
+nam_loc_hydronym_ocean -> LOCATION
+nam_loc_hydronym_river -> LOCATION
+nam_loc_hydronym_sea -> LOCATION
+nam_loc_land -> LOCATION
+nam_loc_land_continent -> LOCATION
+nam_loc_land_island -> LOCATION
+nam_loc_land_mountain -> LOCATION
+nam_loc_land_region -> LOCATION
+nam_num_house -> O
+nam_num_phone -> PHONE
+nam_org_company -> ORGNAME
+nam_org_group -> O
+nam_org_group_band -> ORGNAME
+nam_org_institution -> ORGNAME
+nam_org_nation -> To be decided
+nam_org_organization -> ORGNAME
+nam_org_organization_sub -> O
+nam_org_political_party -> ORGNAME
+nam_oth -> O
+nam_oth_currency -> MONEY
+nam_oth_data_format -> O # tech to decide
+nam_oth_license -> O
+nam_oth_position -> PERSON
+nam_oth_tech -> O
+nam_oth_www -> LINK
+nam_pro -> O # tech
+nam_pro_award -> EVENT
+nam_pro_brand -> ORGNAME
+nam_pro_media -> ORGNAME
+nam_pro_media_periodic -> ORGNAME
+nam_pro_media_radio -> ORGNAME
+nam_pro_media_tv -> ORGNAME
+nam_pro_media_web -> ORGNAME
+nam_pro_model_car -> O
+nam_pro_software -> O
+nam_pro_software_game
+nam_pro_title -> O
+nam_pro_title_album -> O
+nam_pro_title_article -> O
+nam_pro_title_book -> O
+nam_pro_title_document -> O
+nam_pro_title_song -> O
+nam_pro_title_treaty -> O
+nam_pro_title_tv -> O
+nam_pro_vehicle -> O
+
+### KPWR
+
+nam_adj - adjectives
+nam_adj_city -> LOCATION
+nam_adj_country -> LOCATION
+nam_adj_person -> O
+nam_eve_human -> O
+nam_eve_human_cultural -> EVENT
+nam_eve_human_holiday -> EVENT
+nam_eve_human_sport -> EVENT
+nam_fac_goe -> LOCATION
+nam_fac_road -> LOCATION
+nam_fac_square -> O
+nam_fac_system -> O
+nam_liv_god -> O
+nam_liv_habitant -> PERSON
+nam_liv_person -> PERSON
+nam_loc -> LOCATION
+nam_loc_astronomical -> LOCATION
+nam_loc_country_region -> LOCATION
+nam_loc_gpe_admin1 -> LOCATION
+nam_loc_gpe_admin2 -> LOCATION
+nam_loc_gpe_admin3 -> LOCATION
+nam_loc_gpe_city -> LOCATION
+nam_loc_gpe_conurbation -> LOCATION
+nam_loc_gpe_country -> LOCATION
+nam_loc_gpe_district -> LOCATION
+nam_loc_gpe_subdivision -> LOCATION
+nam_loc_historical_region -> LOCATION
+nam_loc_hydronym -> LOCATION
+nam_loc_hydronym_ocean -> LOCATION
+nam_loc_hydronym_river -> LOCATION
+nam_loc_hydronym_sea -> LOCATION
+nam_loc_land -> LOCATION
+nam_loc_land_continent -> LOCATION
+nam_loc_land_island -> LOCATION
+nam_loc_land_mountain -> LOCATION
+nam_loc_land_region -> LOCATION
+nam_num_house -> O
+nam_num_phone -> PHONE
+nam_org_company -> ORGNAME
+nam_org_group -> O
+nam_org_group_band -> ORGNAME
+nam_org_institution -> ORGNAME
+nam_org_nation -> To be decided
+nam_org_organization -> ORGNAME
+nam_org_organization_sub -> O
+nam_org_political_party -> ORGNAME
+nam_oth -> O
+nam_oth_currency -> MONEY
+nam_oth_data_format -> O # tech to decide
+nam_oth_license -> O
+nam_oth_position -> PERSON
+nam_oth_tech -> O
+nam_oth_www -> LINK
+nam_pro -> O # tech
+nam_pro_award -> EVENT
+nam_pro_brand -> ORGNAME
+nam_pro_media -> ORGNAME
+nam_pro_media_periodic -> ORGNAME
+nam_pro_media_radio -> ORGNAME
+nam_pro_media_tv -> ORGNAME
+nam_pro_media_web -> ORGNAME
+nam_pro_model_car -> O
+nam_pro_software -> O
+nam_pro_software_game -> O
+nam_pro_title -> O
+nam_pro_title_album -> O
+nam_pro_title_article -> O
+nam_pro_title_book -> O
+nam_pro_title_document -> O
+nam_pro_title_song -> O
+nam_pro_title_treaty -> O
+nam_pro_title_tv -> O
+nam_pro_vehicle -> O
+
+### MultiNERD
+
+PER -> PERSON
+LOC -> LOCATION
+ORG -> ORGNAME
+ANIM -> O
+BIO -> O
+CEL -> O
+DIS -> O
+EVE -> EVENT
+FOOD -> O
+INST -> O
+MEDIA -> O
+PLANT -> O
+MYTH -> O
+TIME -> TIME
+VEHI -> O
+
+### WikiNER
+
+LOC -> LOCATION
+ORG -> ORGNAME
+PER -> PERSON
+MISC -> O
+NON -> O
+DAB -> O
+
+### Wikineural
+
+ORG -> ORGNAME
+MISC -> O
+PER -> PERSON
+LOC -> LOCATION
