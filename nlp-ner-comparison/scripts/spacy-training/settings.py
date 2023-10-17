@@ -96,8 +96,33 @@ CEN_AND_KPWR_CATEGORIES_MAPPING = {
     "O": "O",
 }
 
+SETTINGS = {
+    "multi-operation": "processing",  # set to "processing" or "threading"
+    "datasets-to-process": [
+        "nkjp",
+        "cen-1.0",
+        "kpwr",
+        "multinerd",
+        "wikineural",
+    ],  # set all datasets that you want to process
+}
 
 DATASETS: Sequence[DatasetDetails] = [
+    {
+        "nkjp": "nkjp",
+        "path": "data/nkjp",
+        "format": "nkjp",
+        "modules": [],
+        "categoriesMapping": {
+            "GEOGNAME": "LOCATION",
+            "TIME": "TIME",
+            "ORGNAME": "ORGNAME",
+            "PERSNAME": "PERSON",
+            "DATE": "TIME",
+            "PLACENAME": "LOCATION",
+            "O": "O",
+        },
+    },
     {
         "name": "cen-1.0",
         "path": "data/cen",
@@ -164,19 +189,4 @@ DATASETS: Sequence[DatasetDetails] = [
             "O": "O",
         },
     },
-    # {
-    #     "nkjp": "nkjp",
-    #     "path": "data/nkjp",
-    #     "format": "nkjp",
-    #     "modules": [],
-    #     "categoriesMapping": {
-    #         "GEOGNAME": "LOCATION",
-    #         "TIME": "TIME",
-    #         "ORGNAME": "ORGNAME",
-    #         "PERSNAME": "PERSON",
-    #         "DATE": "TIME",
-    #         "PLACENAME": "LOCATION",
-    #         "O": "O",
-    #     },
-    # },
 ]

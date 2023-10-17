@@ -8,7 +8,8 @@ def write_to_spacy_format(
     dataset: PreSpacyDataset,
     document_object: DocBin,
     nlp: spacy.language.Language,
-) -> DocBin:
+    name: str,
+) -> None:
     """
     Function that writes the dataset to a spacy format file.
 
@@ -32,7 +33,7 @@ def write_to_spacy_format(
         doc.ents = ents
         document_object.add(doc)
 
-    return document_object
+    document_object.to_disk(name + ".spacy")
 
 
 def split_dataset_to_triple_split(

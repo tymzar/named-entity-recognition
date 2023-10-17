@@ -29,21 +29,48 @@ NKJP: http://clip.ipipan.waw.pl/NationalCorpusOfPolish?action=AttachFile&do=view
 
 ### Combined dataset cen + kpwr + multinerd + wikineural
 
+Multithreaded data preparation:
+
 ```bash
-amount of sentences in iob training data:  5797
-amount of sentences in iob training data:  902
-amount of sentences in iob training data:  875
-amount of sentences in iob training data:  13959
-amount of sentences in iob training data:  4323
-amount of sentences in conllu training data:  155920
-amount of sentences in conllu training data:  19555
-amount of sentences in conllu training data:  19490
-amount of sentences in conllu training data:  108160
-amount of sentences in conllu training data:  13585
-amount of sentences in conllu training data:  13520
-Dataset  train dataset length:  283836 file size:  74.80930137634277 MB
-Dataset  test dataset length:  38365 file size:  10.319704055786133 MB
 Dataset  val dataset length:  33885 file size:  9.536857604980469 MB
+Finished in 272.01 second(s)
+Dataset  test dataset length:  38365 file size:  10.319704055786133 MB
+Finished in 290.83 second(s)
+Dataset  train dataset length:  283836 file size:  74.80930137634277 MB
+Finished in 766.54 second(s)
+Full process finished in 772.62 second(s)
+```
+
+Multi-processed data preparation:
+
+```bash
+Dataset  val dataset length:  33885 file size:  9.536857604980469 MB
+Finished in 74.79 second(s)
+Dataset  test dataset length:  38365 file size:  10.319704055786133 MB
+Finished in 82.03 second(s)
+Dataset  train dataset length:  283836 file size:  74.80930137634277 MB
+Finished in 585.65 second(s)
+Full process finished in 599.26 second(s)
+```
+
+### Combined dataset cen + kpwr + multinerd + wikineural + wiki-ner
+
+```bash
+Dataset  train dataset length: file size:  125.3847534634277 MB
+Dataset  test dataset length: file size:  13.3194055786133 MB
+Dataset  val dataset length: file size:  12.9368604980469 MB
+```
+
+### All datasets
+
+```bash
+Dataset  val dataset length:  54139 file size:  17.501068115234375 MB
+Finished in 120.14 second(s)
+Dataset  test dataset length:  58617 file size:  18.099997520446777 MB
+Finished in 125.31 second(s)
+Dataset  train dataset length:  445858 file size:  144.18569087982178 MB
+Finished in 914.38 second(s)
+Full process finished in 1024.26 second(s)
 ```
 
 ### Data

@@ -487,8 +487,12 @@ def create_doc_objs(par_list, nlp, list_of_cat=False):
 
 
 def convert_to_doc_objs(
-    par_list, doc_bin, nlp, categoriesMapping: dict[str, str], print_cats=False
-):
+    par_list,
+    doc_bin: DocBin,
+    nlp: spacy.language.Language,
+    categoriesMapping: dict[str, str],
+    print_cats=False,
+) -> DocBin:
     all_cats = set([])
 
     for sents in par_list:
@@ -573,7 +577,7 @@ def process_nkjp(
     doc_val_bin: DocBin,
     nlp: spacy.language.Language,
     categoriesMapping: dict[str, str],
-) -> (DocBin, DocBin, DocBin):
+) -> tuple[DocBin, DocBin, DocBin]:
     # Load XML NKJP
     (
         subfolder_to_entities,
@@ -611,7 +615,6 @@ def process_nkjp(
             )
 
     train_pars, dev_pars, test_pars = triple_split(docs_to_pars, subfolder_to_lens)
-
     return (
         convert_to_doc_objs(train_pars, doc_train_bin, nlp, categoriesMapping),
         convert_to_doc_objs(dev_pars, doc_val_bin, nlp, categoriesMapping),
