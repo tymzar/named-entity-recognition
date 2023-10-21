@@ -19,13 +19,18 @@ def dataset_to_disk(
     dataset: PreSpacyDataset,
     document_binary: DocBin,
     nlp: spacy.language.Language,
+    model_name: str,
     dataset_type: str,
 ):
     start_time = time.perf_counter()
 
-    write_to_spacy_format(dataset, document_binary, nlp, dataset_type)
+    write_to_spacy_format(
+        dataset, document_binary, nlp, model_name + "/" + dataset_type
+    )
 
-    file_size_mb = os.path.getsize(dataset_type + ".spacy") / (1024 * 1024)
+    file_size_mb = os.path.getsize(model_name + "/" + dataset_type + ".spacy") / (
+        1024 * 1024
+    )
 
     print(
         "Dataset ",
@@ -45,6 +50,8 @@ def dataset_to_disk(
 def main():
     # Start timer
     start_time = time.perf_counter()
+    # do loop for     "ner-tools": ["spacy"],  # set to ["spacy", "stanford", "bert"]
+    model_name = "./models/" + "spacy" + "/" + SETTINGS["model-name"]
 
     doc_object_train = DocBin()
     doc_object_test = DocBin()
@@ -68,7 +75,16 @@ def main():
         "val": doc_object_val,
     }
 
-    for dataset in DATASETS:
+    datasets_to_process = DATASETS
+
+    if SETTINGS["datasets-to-process"] != []:
+        datasets_to_process = filter(
+            lambda dataset: dataset["name"] in SETTINGS["datasets-to-process"], DATASETS
+        )
+    else:
+        print("No datasets to process set, processing all datasets")
+
+    for dataset in datasets_to_process:
         match dataset["format"]:
             case "connlu":
                 for module in dataset["modules"]:
@@ -198,6 +214,7 @@ def main():
                     dataset_dict[dataset_type],
                     doc_object[dataset_type],
                     nlp,
+                    model_name,
                     dataset_type,
                 ),
             )
@@ -221,6 +238,7 @@ def main():
                     dataset_dict[dataset_type],
                     doc_object[dataset_type],
                     nlp,
+                    model_name,
                     dataset_type,
                 ),
             )

@@ -1,7 +1,9 @@
-from spacy_types import PreSpacyDataset
-from spacy.tokens import DocBin
+import os
 import spacy
 import random
+
+from spacy_types import PreSpacyDataset
+from spacy.tokens import DocBin
 
 
 def write_to_spacy_format(
@@ -32,6 +34,11 @@ def write_to_spacy_format(
         # print(ents)
         doc.ents = ents
         document_object.add(doc)
+
+    write_path = name + ".spacy"
+
+    # make a directory if it does not exist
+    os.makedirs(os.path.dirname(write_path), exist_ok=True)
 
     document_object.to_disk(name + ".spacy")
 
