@@ -18,7 +18,7 @@
 
 import csv
 from typing import List, Tuple, Dict, Generator
-from spacy_types import PreSpacyDataset
+from spacy_types import PreFormatDataset
 
 import datasets
 

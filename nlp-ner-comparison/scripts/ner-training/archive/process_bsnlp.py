@@ -1,7 +1,7 @@
 # TODO: to decide if this data is useful for our project
 
 import os
-from spacy_types import PreSpacyDataset
+from spacy_types import PreFormatDataset
 import spacy_datasets_utils
 from io import TextIOWrapper
 
@@ -15,7 +15,7 @@ class FileEntry:  # leave this empty
 def create_training_data(
     file_raw: TextIOWrapper, file_annotated: TextIOWrapper, module
 ):
-    training_data: PreSpacyDataset = []
+    training_data: PreFormatDataset = []
     annotations = []
     accumulator = []
     full_text = ""
@@ -71,7 +71,7 @@ def create_training_data(
     return training_data
 
 
-def process_bsnlp(path: str, module: str) -> PreSpacyDataset:
+def process_bsnlp(path: str, module: str) -> PreFormatDataset:
     ANNOTATED = "annotated/"
     RAW = "raw/"
     LANGUAGES = "pl/"
@@ -122,7 +122,7 @@ def process_bsnlp(path: str, module: str) -> PreSpacyDataset:
         file_entry.annotated = file_property[1]
         files.append(file_entry)
 
-    dataset: PreSpacyDataset = []
+    dataset: PreFormatDataset = []
 
     for file in files:
         dataset.extend(create_training_data(file.raw, file.annotated, module))

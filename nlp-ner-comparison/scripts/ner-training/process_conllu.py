@@ -1,15 +1,18 @@
-from spacy_types import PreSpacyDataset
+from spacy_types import PreFormatDataset
 import os
 
 
-def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreSpacyDataset:
+def process_conllu(
+    path: str, categoriesMapping: dict[str, str], list_entities=False
+) -> PreFormatDataset:
     current_directory = os.path.dirname(os.path.realpath(__file__))
     root_directory = os.path.dirname(os.path.dirname(current_directory))
     path = os.path.join(root_directory, path)
 
+    all_entities = set([])
     dataset_contents = open(path, "r", encoding="utf-8")
 
-    training_data: PreSpacyDataset = []
+    training_data: PreFormatDataset = []
 
     annotations = []
     accumulator = []
@@ -32,7 +35,7 @@ def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreSpacyDataset
                 wordEndIndex = wordStartIndex + len(word)
                 annotations.append((wordStartIndex, wordEndIndex, nerTag))
 
-            training_data.append((full_sentence, annotations))
+            training_data.append((full_sentence, annotations, False))
 
             accumulator = []
             annotations = []
@@ -40,15 +43,10 @@ def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreSpacyDataset
         elif line != "\n":
             lineContent = line.strip().split("\t")
             # discard the first element second element is the word and the last element is the NER tag
-            if len(lineContent) != 4:
+            if len(lineContent) < 3:
                 continue
 
-            word, _, _, nerTag = (
-                lineContent[0],
-                lineContent[1],
-                lineContent[2],
-                lineContent[3],
-            )
+            _, word, nerTag = lineContent[0], lineContent[1], lineContent[2]
 
             ner_categories = nerTag.split("-")
 
@@ -57,6 +55,8 @@ def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreSpacyDataset
             elif len(ner_categories) == 2:
                 ner_categories[1] = categoriesMapping[ner_categories[1]]
                 nerTag = "-".join(ner_categories)
+
+            all_entities.add(nerTag)
             # make a object to append to the accumulator that consists of the word and the NER tag
             startPointer = len(full_sentence)
 
@@ -64,12 +64,13 @@ def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreSpacyDataset
             # append the word to the full sentence
             full_sentence += word + " "
 
-    print("amount of sentences in iob training data: ", len(training_data))
+    print("All accepted entities: ", all_entities) if list_entities else None
+    print("amount of sentences in conllu training data: ", len(training_data))
     return training_data
 
 
 def main():
-    process_iob("../../data/cen/train.iob")
+    process_conllu("../../data/wikineural/train.conllu", True)
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
-from spacy_types import PreSpacyDataset
+from spacy_types import PreFormatDataset
 import os
 
 
-def process_wiki_ner(path: str, categoriesMapping: dict[str, str]) -> PreSpacyDataset:
+def process_wiki_ner(path: str, categoriesMapping: dict[str, str]) -> PreFormatDataset:
     current_directory = os.path.dirname(os.path.realpath(__file__))
     root_directory = os.path.dirname(os.path.dirname(current_directory))
     path = os.path.join(root_directory, path)
@@ -54,7 +54,7 @@ def process_wiki_ner(path: str, categoriesMapping: dict[str, str]) -> PreSpacyDa
 
             annotations.append((wordStartIndex, wordEndIndex, nerTag))
 
-        training_data.append((full_sentence, annotations))
+        training_data.append((full_sentence, annotations, False))
 
         accumulator = []
         annotations = []

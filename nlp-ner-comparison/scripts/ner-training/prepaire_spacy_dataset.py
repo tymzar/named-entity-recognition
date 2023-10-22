@@ -7,51 +7,73 @@ from collections.abc import Sequence
 from multiprocessing import Process
 from settings import DATASETS, SETTINGS
 from spacy.tokens import DocBin
-from spacy_types import PreSpacyDataset
+from spacy_types import PreFormatDataset
 from process_conllu import process_conllu
 from process_wiki_ner import process_wiki_ner
 from spacy_datasets_utils import split_dataset_to_triple_split, write_to_spacy_format
+from stanford_datasets_utils import write_to_stanford_format
 from process_iob import process_iob
-from process_nkjp import process_nkjp
+from process_nkjp import process_nkjp, process_flat_dataset
 
 
 def dataset_to_disk(
-    dataset: PreSpacyDataset,
+    dataset: PreFormatDataset,
     document_binary: DocBin,
     nlp: spacy.language.Language,
+    tool: str,
     model_name: str,
     dataset_type: str,
 ):
     start_time = time.perf_counter()
+    dataset_path = model_name + "/" + dataset_type
 
-    write_to_spacy_format(
-        dataset, document_binary, nlp, model_name + "/" + dataset_type
-    )
+    match tool:
+        case "spacy":
+            write_to_spacy_format(dataset, document_binary, nlp, tool, dataset_path)
 
-    file_size_mb = os.path.getsize(model_name + "/" + dataset_type + ".spacy") / (
-        1024 * 1024
-    )
+            file_size_mb = os.path.getsize(dataset_path + ".spacy") / (1024 * 1024)
 
-    print(
-        "Dataset ",
-        dataset_type,
-        "dataset length: ",
-        len(dataset),
-        "file size: ",
-        file_size_mb,
-        "MB",
-    )
+            print(
+                "Dataset ",
+                dataset_type,
+                "dataset length: ",
+                len(dataset),
+                "file size: ",
+                file_size_mb,
+                "MB",
+            )
 
-    end_time = time.perf_counter()
+            end_time = time.perf_counter()
 
-    print(f"Finished in {round(end_time - start_time, 2)} second(s)")
+            print(f"Finished in {round(end_time - start_time, 2)} second(s)")
+
+        case "stanford":
+            write_to_stanford_format(dataset, tool, dataset_path)
+
+            file_size_mb = os.path.getsize(dataset_path + ".tsv") / (1024 * 1024)
+
+            print(
+                "Dataset ",
+                dataset_type,
+                "dataset length: ",
+                len(dataset),
+                "file size: ",
+                file_size_mb,
+                "MB",
+            )
+
+            end_time = time.perf_counter()
+
+            print(f"Finished in {round(end_time - start_time, 2)} second(s)")
+
+        case "robert":
+            print("RoBERTa NER not supported yet")
 
 
 def main():
     # Start timer
     start_time = time.perf_counter()
     # do loop for     "ner-tools": ["spacy"],  # set to ["spacy", "stanford", "bert"]
-    model_name = "./models/" + "spacy" + "/" + SETTINGS["model-name"]
 
     doc_object_train = DocBin()
     doc_object_test = DocBin()
@@ -59,9 +81,9 @@ def main():
 
     nlp = spacy.load("pl_core_news_lg")
 
-    train_dataset: PreSpacyDataset = []
-    test_dataset: PreSpacyDataset = []
-    val_dataset: PreSpacyDataset = []
+    train_dataset: PreFormatDataset = []
+    test_dataset: PreFormatDataset = []
+    val_dataset: PreFormatDataset = []
 
     dataset_dict = {
         "train": train_dataset,
@@ -129,6 +151,16 @@ def main():
                     nlp,
                     categoriesMapping=dataset["categoriesMapping"],
                 )
+
+                (
+                    dataset_train_dictionary,
+                    dataset_test_dictionary,
+                    dataset_val_dictionary,
+                ) = process_flat_dataset(categoriesMapping=dataset["categoriesMapping"])
+
+                dataset_dict["train"].extend(dataset_train_dictionary)
+                dataset_dict["test"].extend(dataset_test_dictionary)
+                dataset_dict["val"].extend(dataset_val_dictionary)
 
                 doc_object["test"] = doc_object_test_proc
                 doc_object["val"] = doc_object_val_proc
@@ -204,58 +236,66 @@ def main():
     #         "MB",
     #     )
 
-    if SETTINGS["multi-operation"] == "threading":
-        thread_array: Sequence[threading.Thread] = []
+    for tool in SETTINGS["ner-tools"]:
+        model_name = "./models/" + tool + "/" + SETTINGS["model-name"]
 
-        for _, dataset_type in enumerate(dataset_dict):
-            new_thread = threading.Thread(
-                target=dataset_to_disk,
-                args=(
-                    dataset_dict[dataset_type],
-                    doc_object[dataset_type],
-                    nlp,
-                    model_name,
-                    dataset_type,
-                ),
-            )
+        if SETTINGS["multi-operation"] == "threading":
+            thread_array: Sequence[threading.Thread] = []
 
-            thread_array.append(new_thread)
+            for _, dataset_type in enumerate(dataset_dict):
+                new_thread = threading.Thread(
+                    target=dataset_to_disk,
+                    args=(
+                        dataset_dict[dataset_type],
+                        doc_object[dataset_type],
+                        nlp,
+                        tool,
+                        model_name,
+                        dataset_type,
+                    ),
+                )
+                thread_array.append(new_thread)
 
-        for thread in thread_array:
-            print("Starting dataset write thread for: ", thread.name)
-            thread.start()
+            for thread in thread_array:
+                print("Starting dataset write thread for: ", thread.name)
+                thread.start()
 
-        for thread in reversed(thread_array):
-            print("Joining and waiting for a thread for: ", thread.name)
-            thread.join()
-    elif SETTINGS["multi-operation"] == "processing":
-        process_array: Sequence[Process] = []
+            for thread in reversed(thread_array):
+                print("Joining and waiting for a thread for: ", thread.name)
+                thread.join()
+        elif SETTINGS["multi-operation"] == "processing":
+            process_array: Sequence[Process] = []
 
-        for _, dataset_type in enumerate(dataset_dict):
-            new_process = Process(
-                target=dataset_to_disk,
-                args=(
-                    dataset_dict[dataset_type],
-                    doc_object[dataset_type],
-                    nlp,
-                    model_name,
-                    dataset_type,
-                ),
-            )
+            for _, dataset_type in enumerate(dataset_dict):
+                new_process = Process(
+                    target=dataset_to_disk,
+                    args=(
+                        dataset_dict[dataset_type],
+                        doc_object[dataset_type],
+                        nlp,
+                        tool,
+                        model_name,
+                        dataset_type,
+                    ),
+                )
 
-            process_array.append(new_process)
+                process_array.append(new_process)
 
-        for process in process_array:
-            print("Starting dataset write process for: ", process.name)
-            process.start()
+            for process in process_array:
+                print("Starting dataset write process for tool: {tool}: ", process.name)
+                process.start()
 
-        for process in reversed(process_array):
-            print("Joining and waiting for a process for: ", process.name)
-            process.join()
+            for process in reversed(process_array):
+                print(
+                    "Joining and waiting for a process for tool: {tool}: ", process.name
+                )
+                process.join()
 
-    end_time = time.perf_counter()
+        end_time = time.perf_counter()
 
-    print(f"Full process finished in {round(end_time - start_time, 2)} second(s)")
+        print(
+            f"Full process for tool: {tool} finished in {round(end_time - start_time, 2)} second(s)"
+        )
 
 
 if __name__ == "__main__":

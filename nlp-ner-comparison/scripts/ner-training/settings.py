@@ -98,9 +98,12 @@ CEN_AND_KPWR_CATEGORIES_MAPPING = {
 
 SETTINGS = {
     "model-name": "test",
-    "ner-tools": ["spacy"],  # set to ["spacy", "stanford", "bert"]
+    "ner-tools": ["spacy", "stanford"],  # set to ["spacy", "stanford", "bert"]
     "multi-operation": "processing",  # set to "processing" or "threading"
-    "datasets-to-process": [],  # set all datasets that you want to process
+    "datasets-to-process": [
+        "nkjp",
+        "wikineural",
+    ],  # set all datasets that you want to process
 }
 
 DATASETS: Sequence[DatasetDetails] = [

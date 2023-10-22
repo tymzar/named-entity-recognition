@@ -6,7 +6,7 @@ import spacy
 from tqdm import tqdm
 from lxml import etree
 from spacy.tokens import DocBin, Doc
-from spacy_types import PreSpacyDataset
+from spacy_types import PreFormatDataset
 
 
 NAMESPACES = {"x": "http://www.tei-c.org/ns/1.0"}
@@ -410,6 +410,65 @@ def triple_split(docs_to_pars, subfolder_to_lens):
     return train_pars, dev_pars, test_pars
 
 
+def create_common_dataset(
+    par_list, categoriesMapping: dict[str, str], list_of_cat=False
+) -> PreFormatDataset:
+    all_cats = set([])
+    dataset: PreFormatDataset = []
+
+    for sentences in par_list:
+        words = []
+        ent_annotations = []
+        for _, sentence in enumerate(sentences):
+            full_sentence = ""
+            annotations = []
+
+            if sentence.metadata["sent_id"] in ["s45074", "s45075"]:
+                # These sents contain cycles
+                continue
+            entities = sentence.metadata["entities"]
+            ent_annotations.extend(["O" for _ in sentence])
+
+            try:
+                for entity in entities:
+                    targets = entity["targets"]
+                    ent_type = entity["ner_type"].upper()
+                    ent_type = categoriesMapping[ent_type]
+                    all_cats.add(ent_type)
+                    ent_annotations[targets[0]] = f"B-{ent_type}"
+                    for inside in targets[1:]:
+                        all_cats.add(ent_type)
+                        ent_annotations[inside] = f"I-{ent_type}"
+            except IndexError:
+                print("Indexing error: ", sentence)
+
+            for token_index, token in enumerate(sentence):
+                entry = ()
+
+                words.append(token["form"])
+
+                start_index = len(full_sentence)
+                end_index = start_index + len(token["form"]) - 1
+                entity = ent_annotations[token_index]
+
+                misc = token["misc"]
+                if misc and "SpaceAfter" in misc and misc["SpaceAfter"] == "No":
+                    full_sentence += token["form"]
+                else:
+                    full_sentence += token["form"] + " "
+                entry = (
+                    start_index,
+                    end_index,
+                    entity,
+                )
+                annotations.append(entry)
+
+            dataset.append((full_sentence, annotations, True))
+
+    print("Found categoris: ", all_cats) if list_of_cat else None
+    return dataset
+
+
 def create_doc_objs(par_list, nlp, list_of_cat=False):
     all_cats = set([])
     doc_bin = DocBin()
@@ -500,7 +559,7 @@ def convert_to_doc_objs(
         tags, pos, morphs, lemmas, heads, deps, sent_starts = [], [], [], [], [], [], []
         token_index = 0
         ent_annotations = []
-        for sent_i, sent in enumerate(sents):
+        for _, sent in enumerate(sents):
             if sent.metadata["sent_id"] in ["s45074", "s45075"]:
                 # These sents contain cycles
                 continue
@@ -569,6 +628,57 @@ def convert_to_doc_objs(
     print(all_cats) if print_cats else None
 
     return doc_bin
+
+
+def process_flat_dataset(
+    categoriesMapping: dict[str, str]
+) -> tuple[DocBin, DocBin, DocBin]:
+    # Load XML NKJP
+    (
+        subfolder_to_entities,
+        seg_id_to_par_id,
+        seg_id_to_index,
+        subfolder_to_lens,
+    ) = load_xml_nkjp()
+
+    # Load UD NKJP
+    with open(CONLLU_PATH) as f:
+        txt = f.read()
+    nkjp_sents = conllu.parse(txt)
+    retokenized_nkjp_sents = [retokenize_conllu_sent(sent) for sent in nkjp_sents]
+
+    docs_to_pars = {}
+    for sent in tqdm(retokenized_nkjp_sents):
+        assign_named_entities_to_conllu_sent(
+            sent, subfolder_to_entities, seg_id_to_par_id, seg_id_to_index
+        )
+        original_folder = sent.metadata["original_folder"]
+        par_id = sent.metadata["par_id"]
+        if original_folder in docs_to_pars:
+            if par_id in docs_to_pars[original_folder]:
+                docs_to_pars[original_folder][par_id].append(sent)
+            else:
+                docs_to_pars[original_folder][par_id] = [sent]
+        else:
+            docs_to_pars[original_folder] = {par_id: [sent]}
+
+    for folder in docs_to_pars:
+        for par_id in docs_to_pars[folder]:
+            sent_list = docs_to_pars[folder][par_id]
+            docs_to_pars[folder][par_id] = sorted(
+                sent_list, key=lambda sent: sent.metadata["par_position"]
+            )
+
+    # nlp = spacy.blank("pl")
+    train_pars, dev_pars, test_pars = triple_split(docs_to_pars, subfolder_to_lens)
+
+    train_dataset = create_common_dataset(
+        train_pars, categoriesMapping=categoriesMapping
+    )
+    dev_dataset = create_common_dataset(dev_pars, categoriesMapping=categoriesMapping)
+    test_dataset = create_common_dataset(test_pars, categoriesMapping=categoriesMapping)
+
+    return train_dataset, dev_dataset, test_dataset
 
 
 def process_nkjp(
@@ -659,14 +769,28 @@ def main():
                 sent_list, key=lambda sent: sent.metadata["par_position"]
             )
 
-    nlp = spacy.blank("pl")
+    # nlp = spacy.blank("pl")
     train_pars, dev_pars, test_pars = triple_split(docs_to_pars, subfolder_to_lens)
-    train_docs = create_doc_objs(train_pars, nlp, True)
-    dev_docs = create_doc_objs(dev_pars, nlp, True)
-    test_docs = create_doc_objs(test_pars, nlp)
-    train_docs.to_disk("nkjp_train.spacy")
-    dev_docs.to_disk("nkjp_dev.spacy")
-    test_docs.to_disk("nkjp_test.spacy")
+    # train_docs = create_doc_objs(train_pars, nlp, True)
+    print(
+        create_common_dataset(
+            dev_pars,
+            categoriesMapping={
+                "GEOGNAME": "LOCATION",
+                "TIME": "TIME",
+                "ORGNAME": "ORGNAME",
+                "PERSNAME": "PERSON",
+                "DATE": "TIME",
+                "PLACENAME": "LOCATION",
+                "O": "O",
+            },
+        )
+    )
+    # dev_docs = create_doc_objs(dev_pars, nlp, True)
+    # test_docs = create_doc_objs(test_pars, nlp)
+    # train_docs.to_disk("nkjp_train.spacy")
+    # dev_docs.to_disk("nkjp_dev.spacy")
+    # test_docs.to_disk("nkjp_test.spacy")
 
 
 if __name__ == "__main__":

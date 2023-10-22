@@ -2,14 +2,15 @@ import os
 import spacy
 import random
 
-from spacy_types import PreSpacyDataset
+from spacy_types import PreFormatDataset
 from spacy.tokens import DocBin
 
 
 def write_to_spacy_format(
-    dataset: PreSpacyDataset,
+    dataset: PreFormatDataset,
     document_object: DocBin,
     nlp: spacy.language.Language,
+    tool: str,
     name: str,
 ) -> None:
     """
@@ -20,7 +21,10 @@ def write_to_spacy_format(
         file_name (str): The name of the file that will be written.
     """
 
-    for text, annotations in dataset:
+    for text, annotations, isToSkip in dataset:
+        if tool == "spacy" and isToSkip:
+            continue
+
         doc = nlp(text)
         ents = []
         # print(text)
@@ -44,8 +48,8 @@ def write_to_spacy_format(
 
 
 def split_dataset_to_triple_split(
-    dataset: PreSpacyDataset,
-) -> tuple[PreSpacyDataset, PreSpacyDataset, PreSpacyDataset]:
+    dataset: PreFormatDataset,
+) -> tuple[PreFormatDataset, PreFormatDataset, PreFormatDataset]:
     """
     Split the dataset into train, val and test datasets. The split is 80% train, 10% val and 10% test.s
 
