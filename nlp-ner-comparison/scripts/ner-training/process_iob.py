@@ -2,7 +2,9 @@ from spacy_types import PreFormatDataset
 import os
 
 
-def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreFormatDataset:
+def process_iob(
+    path: str, categoriesMapping: dict[str, str], categories_prefix: bool
+) -> PreFormatDataset:
     current_directory = os.path.dirname(os.path.realpath(__file__))
     root_directory = os.path.dirname(os.path.dirname(current_directory))
     path = os.path.join(root_directory, path)
@@ -38,6 +40,7 @@ def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreFormatDatase
             annotations = []
             full_sentence = ""
         elif line != "\n":
+            is_previous_ner_tag = False
             lineContent = line.strip().split("\t")
             # discard the first element second element is the word and the last element is the NER tag
             if len(lineContent) != 4:
@@ -54,9 +57,27 @@ def process_iob(path: str, categoriesMapping: dict[str, str]) -> PreFormatDatase
 
             if len(ner_categories) == 1:
                 nerTag = categoriesMapping[ner_categories[0]]
+
+                if nerTag != "O" and categories_prefix:
+                    if is_previous_ner_tag:
+                        nerTag = "I-" + nerTag
+                    else:
+                        nerTag = "B-" + nerTag
+
+                if nerTag.startswith("B-"):
+                    is_previous_ner_tag = True
+
+                if nerTag.startswith("O"):
+                    is_previous_ner_tag = False
+
             elif len(ner_categories) == 2:
-                ner_categories[1] = categoriesMapping[ner_categories[1]]
-                nerTag = "-".join(ner_categories)
+                if categories_prefix and categoriesMapping[ner_categories[1]] != "O":
+                    ner_categories[1] = categoriesMapping[ner_categories[1]]
+                    nerTag = "-".join(ner_categories)
+
+                else:
+                    nerTag = categoriesMapping[ner_categories[1]]
+
             # make a object to append to the accumulator that consists of the word and the NER tag
             startPointer = len(full_sentence)
 

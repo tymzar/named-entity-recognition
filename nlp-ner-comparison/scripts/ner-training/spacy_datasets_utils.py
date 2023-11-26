@@ -21,25 +21,38 @@ def write_to_spacy_format(
         file_name (str): The name of the file that will be written.
     """
 
+    label_accumulator = {
+        "O": 0,
+        "PERSON": 0,
+        "ORGNAME": 0,
+        "LOCATION": 0,
+        "TIME": 0,
+        "EVENT": 0,
+        "MONEY": 0,
+    }
+
     for text, annotations, isToSkip in dataset:
         if tool == "spacy" and isToSkip:
             continue
 
         doc = nlp(text)
         ents = []
-        # print(text)
-        # print(annotations)
         for start, end, label in annotations:
-            # print(doc.char_span(start, end, label=label))
+            if label in label_accumulator:
+                label_accumulator[label] += 1
+            else:
+                label_accumulator[label] = 1
             span = doc.char_span(start, end, label=label)
-            # print(span)
             ents.append(span)
 
-        # print(ents)
         doc.ents = ents
         document_object.add(doc)
 
     write_path = name + ".spacy"
+
+    # pretty print amount of labels for each category
+    for label, amount in label_accumulator.items():
+        print(f"{label}: {amount}")
 
     # make a directory if it does not exist
     os.makedirs(os.path.dirname(write_path), exist_ok=True)

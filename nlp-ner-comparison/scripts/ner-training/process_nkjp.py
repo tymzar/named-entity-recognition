@@ -399,48 +399,65 @@ def triple_split(docs_to_pars, subfolder_to_lens):
                     dev_pars.append(sents)
                 else:
                     test_pars.append(sents)
-    print(f"Total paragraphs: {total_paragraphs}")
-    print(f"Filtered paragraphs: {len(train_pars) + len(test_pars) + len(dev_pars)}")
-    print(
-        f"Removed paragraphs: {total_paragraphs - (len(train_pars) + len(test_pars) + len(dev_pars))}"
-    )
-    print(f"Train paragraphs: {len(train_pars)}")
-    print(f"Dev paragraphs: {len(dev_pars)}")
-    print(f"Test paragraphs: {len(test_pars)}")
+    # print(f"Total paragraphs: {total_paragraphs}")
+    # print(f"Filtered paragraphs: {len(train_pars) + len(test_pars) + len(dev_pars)}")
+    # print(
+    #     f"Removed paragraphs: {total_paragraphs - (len(train_pars) + len(test_pars) + len(dev_pars))}"
+    # )
+    # print(f"Train paragraphs: {len(train_pars)}")
+    # print(f"Dev paragraphs: {len(dev_pars)}")
+    # print(f"Test paragraphs: {len(test_pars)}")
     return train_pars, dev_pars, test_pars
 
 
 def create_common_dataset(
-    par_list, categoriesMapping: dict[str, str], list_of_cat=False
+    par_list,
+    categoriesMapping: dict[str, str],
+    categories_prefix: bool,
+    list_of_cat=False,
 ) -> PreFormatDataset:
     all_cats = set([])
     dataset: PreFormatDataset = []
 
     for sentences in par_list:
         words = []
-        ent_annotations = []
-        for _, sentence in enumerate(sentences):
+        for sent_i, sentence in enumerate(sentences):
+            skip_on_error = False
+            ent_annotations = []
             full_sentence = ""
             annotations = []
-
             if sentence.metadata["sent_id"] in ["s45074", "s45075"]:
                 # These sents contain cycles
                 continue
             entities = sentence.metadata["entities"]
             ent_annotations.extend(["O" for _ in sentence])
 
-            try:
-                for entity in entities:
-                    targets = entity["targets"]
-                    ent_type = entity["ner_type"].upper()
-                    ent_type = categoriesMapping[ent_type]
-                    all_cats.add(ent_type)
-                    ent_annotations[targets[0]] = f"B-{ent_type}"
-                    for inside in targets[1:]:
-                        all_cats.add(ent_type)
-                        ent_annotations[inside] = f"I-{ent_type}"
-            except IndexError:
-                print("Indexing error: ", sentence)
+            for entity in entities:
+                targets = entity["targets"]
+
+                ent_type = entity["ner_type"].upper()
+                ent_type = categoriesMapping[ent_type]
+                all_cats.add(ent_type)
+
+                try:
+                    for target_index, target in enumerate(targets):
+                        if categories_prefix:
+                            if target_index == 0:
+                                ent_annotations[target] = f"B-{ent_type}"
+                            else:
+                                ent_annotations[target] = f"I-{ent_type}"
+                        else:
+                            ent_annotations[target] = ent_type
+                    # print("targets: ", targets)
+                    # print("resolved target: ", [sentence[target] for target in targets])
+                    # print("ent_type: ", ent_type)
+                    # print("ent_annotations: ", ent_annotations)
+                except IndexError:
+                    skip_on_error = True
+                    break
+
+            if skip_on_error:
+                continue
 
             for token_index, token in enumerate(sentence):
                 entry = ()
@@ -448,7 +465,7 @@ def create_common_dataset(
                 words.append(token["form"])
 
                 start_index = len(full_sentence)
-                end_index = start_index + len(token["form"]) - 1
+                end_index = start_index + len(token["form"])
                 entity = ent_annotations[token_index]
 
                 misc = token["misc"]
@@ -541,7 +558,6 @@ def create_doc_objs(par_list, nlp, list_of_cat=False):
         )
         doc_bin.add(doc_obj)
     print("Found categoris: ", all_cats) if list_of_cat else None
-    print("Found categoris: ", all_cats)
     return doc_bin
 
 
@@ -597,19 +613,19 @@ def convert_to_doc_objs(
                     sent_starts.append(False)
                 token_index += 1
             try:
-                # print(entities)
                 for entity in entities:
                     targets = entity["targets"]
                     ent_type = entity["ner_type"].upper()
                     ent_type = categoriesMapping[ent_type]
                     all_cats.add(ent_type)
+
                     ent_annotations[targets[0]] = f"B-{ent_type}"
                     for inside in targets[1:]:
                         all_cats.add(ent_type)
                         ent_annotations[inside] = f"I-{ent_type}"
+
             except IndexError:
                 print("Indexing error: ", sent)
-
         doc_obj = Doc(
             vocab=nlp.vocab,
             words=words,
@@ -631,7 +647,8 @@ def convert_to_doc_objs(
 
 
 def process_flat_dataset(
-    categoriesMapping: dict[str, str]
+    categoriesMapping: dict[str, str],
+    categories_prefix: bool,
 ) -> tuple[DocBin, DocBin, DocBin]:
     # Load XML NKJP
     (
@@ -669,14 +686,23 @@ def process_flat_dataset(
                 sent_list, key=lambda sent: sent.metadata["par_position"]
             )
 
-    # nlp = spacy.blank("pl")
     train_pars, dev_pars, test_pars = triple_split(docs_to_pars, subfolder_to_lens)
 
     train_dataset = create_common_dataset(
-        train_pars, categoriesMapping=categoriesMapping
+        train_pars,
+        categoriesMapping=categoriesMapping,
+        categories_prefix=categories_prefix,
     )
-    dev_dataset = create_common_dataset(dev_pars, categoriesMapping=categoriesMapping)
-    test_dataset = create_common_dataset(test_pars, categoriesMapping=categoriesMapping)
+    dev_dataset = create_common_dataset(
+        dev_pars,
+        categoriesMapping=categoriesMapping,
+        categories_prefix=categories_prefix,
+    )
+    test_dataset = create_common_dataset(
+        test_pars,
+        categoriesMapping=categoriesMapping,
+        categories_prefix=categories_prefix,
+    )
 
     return train_dataset, dev_dataset, test_dataset
 
@@ -772,20 +798,20 @@ def main():
     # nlp = spacy.blank("pl")
     train_pars, dev_pars, test_pars = triple_split(docs_to_pars, subfolder_to_lens)
     # train_docs = create_doc_objs(train_pars, nlp, True)
-    print(
-        create_common_dataset(
-            dev_pars,
-            categoriesMapping={
-                "GEOGNAME": "LOCATION",
-                "TIME": "TIME",
-                "ORGNAME": "ORGNAME",
-                "PERSNAME": "PERSON",
-                "DATE": "TIME",
-                "PLACENAME": "LOCATION",
-                "O": "O",
-            },
-        )
+
+    create_common_dataset(
+        dev_pars,
+        categoriesMapping={
+            "GEOGNAME": "LOCATION",
+            "TIME": "TIME",
+            "ORGNAME": "ORGNAME",
+            "PERSNAME": "PERSON",
+            "DATE": "TIME",
+            "PLACENAME": "LOCATION",
+            "O": "O",
+        },
     )
+
     # dev_docs = create_doc_objs(dev_pars, nlp, True)
     # test_docs = create_doc_objs(test_pars, nlp)
     # train_docs.to_disk("nkjp_train.spacy")

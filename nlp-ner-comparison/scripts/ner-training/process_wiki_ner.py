@@ -2,7 +2,9 @@ from spacy_types import PreFormatDataset
 import os
 
 
-def process_wiki_ner(path: str, categoriesMapping: dict[str, str]) -> PreFormatDataset:
+def process_wiki_ner(
+    path: str, categoriesMapping: dict[str, str], categories_prefix=False
+) -> PreFormatDataset:
     current_directory = os.path.dirname(os.path.realpath(__file__))
     root_directory = os.path.dirname(os.path.dirname(current_directory))
     path = os.path.join(root_directory, path)
@@ -23,15 +25,32 @@ def process_wiki_ner(path: str, categoriesMapping: dict[str, str]) -> PreFormatD
         full_sentence = ""
 
         for entry in lineContent:
+            is_previous_ner_tag = False
             word, _, nerTag = entry.split("|")
 
             ner_categories = nerTag.split("-")
 
             if len(ner_categories) == 1:
                 nerTag = categoriesMapping[ner_categories[0]]
+
+                if nerTag != "O" and categories_prefix:
+                    if is_previous_ner_tag:
+                        nerTag = "I-" + nerTag
+                    else:
+                        nerTag = "B-" + nerTag
+
+                if nerTag.startswith("B-"):
+                    is_previous_ner_tag = True
+
+                if nerTag.startswith("O"):
+                    is_previous_ner_tag = False
+
             elif len(ner_categories) == 2:
-                ner_categories[1] = categoriesMapping[ner_categories[1]]
-                nerTag = "-".join(ner_categories)
+                if categories_prefix and categoriesMapping[ner_categories[1]] != "O":
+                    ner_categories[1] = categoriesMapping[ner_categories[1]]
+                    nerTag = "-".join(ner_categories)
+                else:
+                    nerTag = categoriesMapping[ner_categories[1]]
 
             startPointer = len(full_sentence)
 

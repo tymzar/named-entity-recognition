@@ -1,5 +1,6 @@
 from typing import TypedDict
 from collections.abc import Sequence
+from ner_categories_mapping import CEN_AND_KPWR_CATEGORIES_MAPPING
 
 
 class DatasetDetails(TypedDict):
@@ -10,99 +11,18 @@ class DatasetDetails(TypedDict):
     categoriesMapping: dict[str, str]
 
 
-CEN_AND_KPWR_CATEGORIES_MAPPING = {
-    "nam_adj": "O",
-    "nam_adj_city": "LOCATION",
-    "nam_adj_country": "LOCATION",
-    "nam_adj_person": "O",
-    "nam_eve": "EVENT",
-    "nam_eve_human": "O",
-    "nam_eve_human_cultural": "EVENT",
-    "nam_eve_human_holiday": "EVENT",
-    "nam_eve_human_sport": "EVENT",
-    "nam_fac_goe": "LOCATION",
-    "nam_fac_goe_stop": "LOCATION",
-    "nam_fac_park": "LOCATION",
-    "nam_fac_road": "LOCATION",
-    "nam_fac_square": "O",
-    "nam_fac_system": "O",
-    "nam_fac_bridge": "O",
-    "nam_liv_god": "O",
-    "nam_liv_habitant": "PERSON",
-    "nam_liv_person": "PERSON",
-    "nam_liv_character": "PERSON",
-    "nam_loc": "LOCATION",
-    "nam_liv_animal": "O",
-    "nam_loc_astronomical": "LOCATION",
-    "nam_loc_country_region": "LOCATION",
-    "nam_loc_gpe_admin1": "LOCATION",
-    "nam_loc_gpe_admin2": "LOCATION",
-    "nam_loc_gpe_admin3": "LOCATION",
-    "nam_loc_gpe_city": "LOCATION",
-    "nam_loc_gpe_conurbation": "LOCATION",
-    "nam_loc_gpe_country": "LOCATION",
-    "nam_loc_gpe_district": "LOCATION",
-    "nam_loc_gpe_subdivision": "LOCATION",
-    "nam_loc_historical_region": "LOCATION",
-    "nam_loc_hydronym": "LOCATION",
-    "nam_loc_hydronym_ocean": "LOCATION",
-    "nam_loc_hydronym_river": "LOCATION",
-    "nam_loc_hydronym_sea": "LOCATION",
-    "nam_loc_hydronym_lake": "LOCATION",
-    "nam_loc_land_peak": "O",
-    "nam_loc_land": "LOCATION",
-    "nam_loc_land_continent": "LOCATION",
-    "nam_loc_land_island": "LOCATION",
-    "nam_loc_land_mountain": "LOCATION",
-    "nam_loc_land_region": "LOCATION",
-    "nam_num_house": "O",
-    "nam_num_phone": "PHONE",
-    "nam_org_company": "ORGNAME",
-    "nam_org_group": "O",
-    "nam_org_group_band": "ORGNAME",
-    "nam_org_institution": "ORGNAME",
-    "nam_org_nation": "O",
-    "nam_org_group_team": "O",
-    "nam_org_organization": "ORGNAME",
-    "nam_org_organization_sub": "O",
-    "nam_org_political_party": "ORGNAME",
-    "nam_oth": "O",
-    "nam_oth_currency": "MONEY",
-    "nam_oth_data_format": "O",  # tech to decide
-    "nam_oth_license": "O",
-    "nam_oth_position": "PERSON",
-    "nam_oth_tech": "O",
-    "nam_oth_www": "LINK",
-    "nam_pro": "O",  # tech
-    "nam_pro_award": "EVENT",
-    "nam_pro_brand": "ORGNAME",
-    "nam_pro_media": "ORGNAME",
-    "nam_pro_media_periodic": "ORGNAME",
-    "nam_pro_media_radio": "ORGNAME",
-    "nam_pro_media_tv": "ORGNAME",
-    "nam_pro_media_web": "ORGNAME",
-    "nam_pro_model_car": "O",
-    "nam_pro_software": "O",
-    "nam_pro_software_game": "O",
-    "nam_pro_title": "O",
-    "nam_pro_title_album": "O",
-    "nam_pro_title_article": "O",
-    "nam_pro_title_book": "O",
-    "nam_pro_title_document": "O",
-    "nam_pro_title_song": "O",
-    "nam_pro_title_treaty": "O",
-    "nam_pro_title_tv": "O",
-    "nam_pro_vehicle": "O",
-    "O": "O",
-}
-
 SETTINGS = {
-    "model-name": "test",
-    "ner-tools": ["spacy", "stanford"],  # set to ["spacy", "stanford", "bert"]
+    "model-name": "prefix-partial",
+    "ner-tools": ["bert"],  # set to ["spacy", "mitie", "bert"]
     "multi-operation": "processing",  # set to "processing" or "threading"
+    "category-prefix": True,
     "datasets-to-process": [
-        "nkjp",
+        "cen-1.0",
+        "kpwr",
+        "multinerd",
+        # "nkjp",
         "wikineural",
+        "wiki-ner",
     ],  # set all datasets that you want to process
 }
 
